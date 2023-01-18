@@ -1,5 +1,62 @@
 import React from "react";
+/* components */
+import {
+  AStyle,
+  BStyle,
+  HamStyle,
+  HamStyleButton,
+  HeaderStyle,
+  LiStyle,
+  LogoStyle,
+  NavegatorStyle,
+  SpanStyle,
+  UlStyle,
+} from "../styles/navegator_style";
+
+/* images */
+
+import logo from "../assets/shared/logo.svg";
+import ham from "../assets/shared/icon-hamburger.svg";
 
 export default function NavegatorComponent() {
-  return <div>NavegatorComponent</div>;
+  return (
+    <HeaderStyle>
+      <NavegatorStyle>
+        <UlStyle>
+          <LogoStyle src={logo} />
+        </UlStyle>
+        <UlStyle></UlStyle>
+        <UlStyle>
+          <LiStyle>
+            <AStyle>
+              <BStyle>01</BStyle>
+              <SpanStyle>HOME</SpanStyle>
+            </AStyle>
+          </LiStyle>
+          <LiStyle>
+            <AStyle>
+              <BStyle>02</BStyle>
+              <SpanStyle>DESTINATION</SpanStyle>
+            </AStyle>
+          </LiStyle>
+          <LiStyle>
+            <AStyle>
+              <BStyle>03</BStyle>
+              <SpanStyle>CREW</SpanStyle>
+            </AStyle>
+          </LiStyle>
+          <LiStyle>
+            <AStyle>
+              <BStyle>04</BStyle>
+              <SpanStyle>TECHNOLOGY</SpanStyle>
+            </AStyle>
+          </LiStyle>
+
+          <HamStyleButton>
+            <HamStyle src={ham} />
+          </HamStyleButton>
+        </UlStyle>
+      </NavegatorStyle>
+    </HeaderStyle>
+  );
 }
