@@ -1,5 +1,7 @@
+import HomeComponent from "./components/screen/HomeComponent";
+
 function App() {
-  return <></>;
+  return <HomeComponent />;
 }
 
 export default App;

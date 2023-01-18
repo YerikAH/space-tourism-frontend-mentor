@@ -6,7 +6,7 @@ import bgHomeTablet from "../assets/home/background-home-tablet.jpg";
 import bgHomeMobile from "../assets/home/background-home-mobile.jpg";
 
 export const BgGround = styled.div`
-  background: fixed url(${bgHomeMobile}) end/cover no-repeat;
+  background: fixed url(${bgHomeMobile}) center/cover no-repeat;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -18,12 +18,17 @@ export const BgGround = styled.div`
   @media (min-width: 1000px) {
     background-image: url(${bgHomeDesktop});
   }
+  z-index: -1;
 `;
 export const BgGroundSecond = styled.div``;
 
-export const MainStyle = styled.div`
+export const MainStyle = styled.main`
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
+  width: 100%;
+  margin-top: 3rem;
+  padding: 0 1.5rem;
 `;
 export const SectionStyle = styled.section`
   display: grid;
@@ -33,7 +38,10 @@ export const SectionStyle = styled.section`
   }
 `;
 
-export const DivGridOne = styled.div``;
+export const DivGridOne = styled.div`
+  display: grid;
+  gap: 1rem;
+`;
 export const DivGridTwo = styled.div``;
 
 export const HeadlinePrincipal = styled.h1`
@@ -55,6 +63,7 @@ export const HeadlineSecond = styled.h2`
   letter-spacing: 2.7px;
   text-transform: uppercase;
   font: normal normal 400 1rem/1.188rem var(--font-barlow-condensed);
+  color: var(--purple-light);
   @media (min-width: 720px) {
     letter-spacing: 3.375px;
     font-size: 1.25rem;
@@ -70,6 +79,7 @@ export const HeadlineSecond = styled.h2`
 export const TextBodyOne = styled.p`
   color: var(--purple-light);
   font: normal normal 400 0.938rem/1.563rem var(--font-barlow);
+  text-align: center;
   @media (min-width: 720px) {
     font-size: 1rem;
     line-height: 1.75rem;
@@ -77,10 +87,13 @@ export const TextBodyOne = styled.p`
   @media (min-width: 1000px) {
     font-size: 0.938rem;
     line-height: 2rem;
+    text-align: left;
   }
 `;
 
-export const CircleStyleButton = styled.div`
+export const CircleStyleButton = styled.button`
+  margin-top: 5.063rem;
+
   width: 9.375rem;
   height: 9.375rem;
   background-color: var(--white);
@@ -92,7 +105,7 @@ export const CircleStyleButton = styled.div`
   @media (min-width: 720px) {
     width: 15.125rem;
     height: 15.125rem;
-    font-size: 2px;
+    font-size: 2rem;
     line-height: 2.313rem;
     letter-spacing: 2px;
   }

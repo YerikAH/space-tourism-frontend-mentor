@@ -3,6 +3,7 @@ import React from "react";
 import {
   AStyle,
   BStyle,
+  Decoration,
   HamStyle,
   HamStyleButton,
   HeaderStyle,
@@ -25,8 +26,8 @@ export default function NavegatorComponent() {
         <UlStyle>
           <LogoStyle src={logo} />
         </UlStyle>
-        <UlStyle></UlStyle>
-        <UlStyle>
+        <Decoration></Decoration>
+        <UlStyle className="desktop-menu">
           <LiStyle>
             <AStyle>
               <BStyle>01</BStyle>
@@ -51,11 +52,10 @@ export default function NavegatorComponent() {
               <SpanStyle>TECHNOLOGY</SpanStyle>
             </AStyle>
           </LiStyle>
-
-          <HamStyleButton>
-            <HamStyle src={ham} />
-          </HamStyleButton>
         </UlStyle>
+        <HamStyleButton>
+          <HamStyle src={ham} />
+        </HamStyleButton>
       </NavegatorStyle>
     </HeaderStyle>
   );
