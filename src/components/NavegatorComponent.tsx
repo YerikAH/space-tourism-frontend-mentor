@@ -30,25 +30,25 @@ export default function NavegatorComponent() {
         <UlStyle className="desktop-menu">
           <LiStyle>
             <AStyle>
-              <BStyle>01</BStyle>
+              <BStyle>00</BStyle>
               <SpanStyle>HOME</SpanStyle>
             </AStyle>
           </LiStyle>
           <LiStyle>
             <AStyle>
-              <BStyle>02</BStyle>
+              <BStyle>01</BStyle>
               <SpanStyle>DESTINATION</SpanStyle>
             </AStyle>
           </LiStyle>
           <LiStyle>
             <AStyle>
-              <BStyle>03</BStyle>
+              <BStyle>02</BStyle>
               <SpanStyle>CREW</SpanStyle>
             </AStyle>
           </LiStyle>
           <LiStyle>
             <AStyle>
-              <BStyle>04</BStyle>
+              <BStyle>03</BStyle>
               <SpanStyle>TECHNOLOGY</SpanStyle>
             </AStyle>
           </LiStyle>

@@ -20,7 +20,6 @@ export const BgGround = styled.div`
   }
   z-index: -1;
 `;
-export const BgGroundSecond = styled.div``;
 
 export const MainStyle = styled.main`
   max-width: 1440px;
