@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 /* components */
 import NavegatorComponent from "../NavegatorComponent";
 /* images */
@@ -29,8 +29,17 @@ import {
   TextBodyOne,
   TextBodyTwo,
 } from "../../styles/destination_style";
+import { DataDestination, MenuDestination } from "../../interface/interface";
+import {
+  DESTINATION_OPTIONS,
+  INITIAL_STATE_DESTINATION,
+} from "../../constant/initialState";
 
 export default function DestinationComponent() {
+  const [data, setData] = useState<DataDestination>(INITIAL_STATE_DESTINATION);
+  const [options, setOptions] =
+    useState<MenuDestination[]>(DESTINATION_OPTIONS);
+
   return (
     <>
       <BgGround />
@@ -45,32 +54,30 @@ export default function DestinationComponent() {
               </DivTitle>
             </DivStart>
             <ImageRespon>
-              <ImagePlanet src={moon} />
+              <ImagePlanet src={data.imagePath} />
             </ImageRespon>
           </DivGridOne>
           <DivGridTwo>
             <Navigation>
-              <NavigationOptions>moon</NavigationOptions>
-              <NavigationOptions>mars</NavigationOptions>
+              {options.map((item) => (
+                <NavigationOptions>{item.name}</NavigationOptions>
+              ))}
+
+              {/* <NavigationOptions>mars</NavigationOptions>
               <NavigationOptions>europa</NavigationOptions>
-              <NavigationOptions>titan</NavigationOptions>
+              <NavigationOptions>titan</NavigationOptions> */}
             </Navigation>
-            <HeadlinePrincipal>moon</HeadlinePrincipal>
-            <TextBodyOne>
-              See our planet as you’ve never seen it before. A perfect relaxing
-              trip away to help regain perspective and come back refreshed.
-              While you’re there, take in some history by visiting the Luna 2
-              and Apollo 11 landing sites.
-            </TextBodyOne>
+            <HeadlinePrincipal>{data.title}</HeadlinePrincipal>
+            <TextBodyOne>{data.description}</TextBodyOne>
             <Decoration></Decoration>
             <DivBoxOne>
               <DivBoxTwo>
                 <Subtitle>AVG. DISTANCE</Subtitle>
-                <TextBodyTwo>384,400 km</TextBodyTwo>
+                <TextBodyTwo>{data.distance}</TextBodyTwo>
               </DivBoxTwo>
               <DivBoxTwo>
                 <Subtitle>Est. travel time</Subtitle>
-                <TextBodyTwo>3 days</TextBodyTwo>
+                <TextBodyTwo>{data.time}</TextBodyTwo>
               </DivBoxTwo>
             </DivBoxOne>
           </DivGridTwo>
