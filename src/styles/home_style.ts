@@ -60,7 +60,8 @@ export const DivGridTwo = styled.div`
     margin-bottom: 5.625rem;
   }
   @media (min-width: 1000px) {
-    margin-top: 0rem;
+    margin-top: 6rem;
+    margin-left: 6rem;
     margin-bottom: 0rem;
   }
 `;
@@ -94,6 +95,7 @@ export const HeadlineSecond = styled.h2`
     font-size: 1.75rem;
     line-height: 2.125rem;
     letter-spacing: 4.725px;
+    text-align: left;
   }
 `;
 
@@ -121,17 +123,26 @@ export const CircleStyleButton = styled.button`
   border-radius: 255px;
   text-align: center;
   letter-spacing: 1.25px;
+  transition: 0.3s;
   font: normal normal 400 1.25rem/1.438rem var(--font-bellefair);
-
+  &:hover {
+    box-shadow: 0px 0px 0px 80px var(--white-transparent-pale);
+  }
   @media (min-width: 720px) {
     width: 15.125rem;
     height: 15.125rem;
     font-size: 2rem;
     line-height: 2.313rem;
     letter-spacing: 2px;
+    &:hover {
+      box-shadow: 0px 0px 0px 120px var(--white-transparent-pale);
+    }
   }
   @media (min-width: 1000px) {
     width: 17.125rem;
     height: 17.125rem;
+    &:hover {
+      box-shadow: 0px 0px 0px 150px var(--white-transparent-pale);
+    }
   }
 `;

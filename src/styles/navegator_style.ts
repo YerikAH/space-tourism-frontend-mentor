@@ -7,11 +7,14 @@ export const NavegatorStyle = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1.5rem 1.5rem 0 1.5rem; */
+  @media (min-width: 1000px) {
+    padding-top: 2.5rem;
+  }
 `;
 export const UlStyle = styled.ul`
   display: ${(props) => props.className === "desktop-menu" && "none"};
-
+  position: relative;
+  z-index: 5;
   @media (min-width: 720px) {
     display: flex;
     gap: 37px;
@@ -23,10 +26,21 @@ export const UlStyle = styled.ul`
   }
   @media (min-width: 1000px) {
     gap: 50px;
+    padding: ${(props) =>
+      props.className === "desktop-menu" &&
+      "2.438rem 10.313rem 2.438rem 7.688rem"};
   }
 `;
 export const Decoration = styled.div`
   display: none;
+  background: var(--white);
+  mix-blend-mode: normal;
+  opacity: 0.25;
+  width: 100%;
+  height: 1px;
+  position: relative;
+  left: 30px;
+  z-index: 100;
   @media (min-width: 1000px) {
     display: block;
   }
@@ -34,6 +48,25 @@ export const Decoration = styled.div`
 export const LiStyle = styled.li``;
 export const AStyle = styled.a`
   display: flex;
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    background-color: var(--white);
+    bottom: -2.32rem;
+    transition: 0.3s;
+    position: absolute;
+  }
+  &:hover::after {
+    transform: scale(1);
+  }
+  @media (min-width: 1000px) {
+    &::after {
+      bottom: -2.438rem;
+    }
+  }
 `;
 export const BStyle = styled.b`
   display: none;
@@ -57,6 +90,9 @@ export const SpanStyle = styled.span`
 `;
 export const LogoStyle = styled.img`
   margin-left: 1.5rem;
+  @media (min-width: 1000px) {
+    margin: 0 3.438rem 0 2.438rem;
+  }
 `;
 
 export const HamStyleButton = styled.button`

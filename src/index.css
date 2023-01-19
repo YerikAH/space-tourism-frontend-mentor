@@ -6,6 +6,7 @@
   --purple-light: #d0d6f9;
   --white: #ffffff;
   --white-transparent: rgba(255, 255, 255, 0.04);
+  --white-transparent-pale: rgba(255, 255, 255, 0.1);
   --font-barlow: "Barlow", sans-serif;
   --font-barlow-condensed: "Barlow Condensed", sans-serif;
   --font-bellefair: "Bellefair", serif;
