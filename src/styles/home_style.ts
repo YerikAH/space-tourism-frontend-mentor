@@ -7,7 +7,7 @@ import bgHomeMobile from "../assets/home/background-home-mobile.jpg";
 
 export const BgGround = styled.div`
   background: fixed url(${bgHomeMobile}) center/cover no-repeat;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -29,6 +29,13 @@ export const MainStyle = styled.main`
   width: 100%;
   margin-top: 3rem;
   padding: 0 1.5rem;
+  @media (min-width: 720px) {
+    margin-top: 6.625rem;
+  }
+  @media (min-width: 1000px) {
+    margin-top: 15.688rem;
+    margin-bottom: 8.188rem;
+  }
 `;
 export const SectionStyle = styled.section`
   display: grid;
@@ -41,8 +48,22 @@ export const SectionStyle = styled.section`
 export const DivGridOne = styled.div`
   display: grid;
   gap: 1rem;
+  @media (min-width: 720px) {
+    gap: 1.5rem;
+  }
 `;
-export const DivGridTwo = styled.div``;
+export const DivGridTwo = styled.div`
+  margin-top: 5.063rem;
+  margin-bottom: 3rem;
+  @media (min-width: 720px) {
+    margin-top: 9.75rem;
+    margin-bottom: 5.625rem;
+  }
+  @media (min-width: 1000px) {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+`;
 
 export const HeadlinePrincipal = styled.h1`
   text-align: center;
@@ -80,6 +101,8 @@ export const TextBodyOne = styled.p`
   color: var(--purple-light);
   font: normal normal 400 0.938rem/1.563rem var(--font-barlow);
   text-align: center;
+  width: 100%;
+  max-width: 27.75rem;
   @media (min-width: 720px) {
     font-size: 1rem;
     line-height: 1.75rem;
@@ -92,8 +115,6 @@ export const TextBodyOne = styled.p`
 `;
 
 export const CircleStyleButton = styled.button`
-  margin-top: 5.063rem;
-
   width: 9.375rem;
   height: 9.375rem;
   background-color: var(--white);
