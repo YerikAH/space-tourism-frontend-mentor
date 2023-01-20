@@ -118,6 +118,7 @@ export const ImageRespon = styled.div`
   width: 10.625rem;
   height: 10.625rem;
   margin-top: 2rem;
+  overflow: hidden;
   @media (min-width: 720px) {
     width: 18.75rem;
     height: 18.75rem;
@@ -132,6 +133,15 @@ export const ImageRespon = styled.div`
 export const ImagePlanet = styled.img`
   width: 100%;
   height: auto;
+  animation: planet 250s linear 0s infinite;
+  @keyframes planet {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export const TextBodyOne = styled.p`
@@ -168,9 +178,30 @@ export const NavigationOptions = styled.button`
     props.className === "true" ? "var(--white)" : "var(--purple-light)"};
   background-color: transparent;
   text-transform: uppercase;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    transform: ${(props) =>
+      props.className === "true" ? "scale(1)" : "scaleX(0)"};
+    background-color: ${(props) =>
+      props.className === "true" ? "var(--white)" : "var(--purple-light)"};
+    bottom: -8px;
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+  }
+  &:hover::after {
+    transform: scale(1);
+  }
   @media (min-width: 720px) {
     font-size: 1rem;
     line-height: 1.188rem;
+    &::after {
+      bottom: -12px;
+    }
   }
 `;
 
