@@ -1,33 +1,13 @@
 import React, { useState } from "react";
 /* components */
 import NavegatorComponent from "../NavegatorComponent";
-/* images */
-import mars from "../../assets/destination/image-mars.png";
-import europa from "../../assets/destination/image-europa.png";
-import moon from "../../assets/destination/image-moon.png";
-import titan from "../../assets/destination/image-titan.png";
 /* styles */
 import {
   BgGround,
-  BStyle,
-  Decoration,
-  DivBoxOne,
-  DivBoxTwo,
   DivGridOne,
   DivGridTwo,
-  DivStart,
-  DivTitle,
-  HeadlinePrincipal,
-  HeadlineSecond,
-  ImagePlanet,
-  ImageRespon,
   MainStyle,
-  Navigation,
-  NavigationOptions,
   SectionStyle,
-  Subtitle,
-  TextBodyOne,
-  TextBodyTwo,
 } from "../../styles/destination_style";
 import { DataDestination, MenuDestination } from "../../interface/interface";
 import {
@@ -38,6 +18,8 @@ import {
   TITAN_DESTINATION,
 } from "../../constant/constDestination";
 import DestinationNav from "../destination/DestinationNav";
+import DestinationInfo from "../destination/DestinationInfo";
+import DestinationImage from "../destination/DestinationImage";
 
 export default function DestinationComponent() {
   const [data, setData] = useState<DataDestination>(MOON_DESTINATION);
@@ -87,31 +69,11 @@ export default function DestinationComponent() {
       <MainStyle>
         <SectionStyle>
           <DivGridOne>
-            <DivStart>
-              <DivTitle>
-                <BStyle>01</BStyle>
-                <HeadlineSecond>Pick your destination</HeadlineSecond>
-              </DivTitle>
-            </DivStart>
-            <ImageRespon>
-              <ImagePlanet src={data.imagePath} />
-            </ImageRespon>
+            <DestinationImage data={data} />
           </DivGridOne>
           <DivGridTwo>
             <DestinationNav handleClick={handleClick} options={options} />
-            <HeadlinePrincipal>{data.title}</HeadlinePrincipal>
-            <TextBodyOne>{data.description}</TextBodyOne>
-            <Decoration></Decoration>
-            <DivBoxOne>
-              <DivBoxTwo>
-                <Subtitle>AVG. DISTANCE</Subtitle>
-                <TextBodyTwo>{data.distance}</TextBodyTwo>
-              </DivBoxTwo>
-              <DivBoxTwo>
-                <Subtitle>Est. travel time</Subtitle>
-                <TextBodyTwo>{data.time}</TextBodyTwo>
-              </DivBoxTwo>
-            </DivBoxOne>
+            <DestinationInfo data={data} />
           </DivGridTwo>
         </SectionStyle>
       </MainStyle>

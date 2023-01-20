@@ -1,5 +1,5 @@
 import React from "react";
-import { DestinationNavProps } from "../../interface/Props";
+import { DestinationNavProps } from "../../interface/props";
 import { Navigation, NavigationOptions } from "../../styles/destination_style";
 
 export default function DestinationNav({
