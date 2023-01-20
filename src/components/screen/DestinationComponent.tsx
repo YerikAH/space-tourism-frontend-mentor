@@ -37,6 +37,7 @@ import {
   MOON_DESTINATION,
   TITAN_DESTINATION,
 } from "../../constant/constDestination";
+import DestinationNav from "../destination/DestinationNav";
 
 export default function DestinationComponent() {
   const [data, setData] = useState<DataDestination>(MOON_DESTINATION);
@@ -45,18 +46,40 @@ export default function DestinationComponent() {
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const getValue: string = (e.target as HTMLButtonElement).value;
-
-    if (getValue === "moon") {
-      setData(MOON_DESTINATION);
-    } else if (getValue === "mars") {
-      setData(MARS_DESTINATION);
-    } else if (getValue === "europa") {
-      setData(EUROPA_DESTINATION);
-    } else {
-      setData(TITAN_DESTINATION);
-    }
+    let getOptions: MenuDestination[] = [...options];
+    resetMenuOptions(getOptions);
+    changeData(getValue, getOptions);
   };
 
+  function resetMenuOptions(getOptions: MenuDestination[]) {
+    getOptions.map((item) => {
+      item.value = false;
+    });
+    setOptions(getOptions);
+  }
+
+  function changeData(getValue: string, getOptions: MenuDestination[]) {
+    if (getValue === "moon") {
+      setData(MOON_DESTINATION);
+      selectMenuOptions(getValue, getOptions);
+    } else if (getValue === "mars") {
+      setData(MARS_DESTINATION);
+      selectMenuOptions(getValue, getOptions);
+    } else if (getValue === "europa") {
+      setData(EUROPA_DESTINATION);
+      selectMenuOptions(getValue, getOptions);
+    } else {
+      setData(TITAN_DESTINATION);
+      selectMenuOptions(getValue, getOptions);
+    }
+  }
+  function selectMenuOptions(option: string, getOptions: MenuDestination[]) {
+    let selectOption = getOptions.find((item) => item.name === option);
+    if (selectOption !== undefined) {
+      selectOption.value = !selectOption?.value;
+    }
+    setOptions(getOptions);
+  }
   return (
     <>
       <BgGround />
@@ -75,21 +98,7 @@ export default function DestinationComponent() {
             </ImageRespon>
           </DivGridOne>
           <DivGridTwo>
-            <Navigation>
-              {options.map((item) => (
-                <NavigationOptions
-                  className={item.value ? "true" : "false"}
-                  value={item.page}
-                  onClick={(e) => handleClick(e)}
-                >
-                  {item.name}
-                </NavigationOptions>
-              ))}
-
-              {/* <NavigationOptions>mars</NavigationOptions>
-              <NavigationOptions>europa</NavigationOptions>
-              <NavigationOptions>titan</NavigationOptions> */}
-            </Navigation>
+            <DestinationNav handleClick={handleClick} options={options} />
             <HeadlinePrincipal>{data.title}</HeadlinePrincipal>
             <TextBodyOne>{data.description}</TextBodyOne>
             <Decoration></Decoration>

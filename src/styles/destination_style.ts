@@ -164,7 +164,8 @@ export const Navigation = styled.nav`
 export const NavigationOptions = styled.button`
   letter-spacing: 2.3625px;
   font: normal normal 400 0.875rem/1.063rem var(--font-barlow-condensed);
-  color: var(--white);
+  color: ${(props) =>
+    props.className === "true" ? "var(--white)" : "var(--purple-light)"};
   background-color: transparent;
   text-transform: uppercase;
   @media (min-width: 720px) {
