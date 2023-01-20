@@ -1,6 +1,7 @@
 export interface MenuDestination {
   name: string;
   value: boolean;
+  page: string;
 }
 export interface DataDestination {
   imagePath: string;

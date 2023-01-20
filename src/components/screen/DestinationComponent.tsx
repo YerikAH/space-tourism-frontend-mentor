@@ -32,13 +32,30 @@ import {
 import { DataDestination, MenuDestination } from "../../interface/interface";
 import {
   DESTINATION_OPTIONS,
-  INITIAL_STATE_DESTINATION,
-} from "../../constant/initialState";
+  EUROPA_DESTINATION,
+  MARS_DESTINATION,
+  MOON_DESTINATION,
+  TITAN_DESTINATION,
+} from "../../constant/constDestination";
 
 export default function DestinationComponent() {
-  const [data, setData] = useState<DataDestination>(INITIAL_STATE_DESTINATION);
+  const [data, setData] = useState<DataDestination>(MOON_DESTINATION);
   const [options, setOptions] =
     useState<MenuDestination[]>(DESTINATION_OPTIONS);
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const getValue: string = (e.target as HTMLButtonElement).value;
+
+    if (getValue === "moon") {
+      setData(MOON_DESTINATION);
+    } else if (getValue === "mars") {
+      setData(MARS_DESTINATION);
+    } else if (getValue === "europa") {
+      setData(EUROPA_DESTINATION);
+    } else {
+      setData(TITAN_DESTINATION);
+    }
+  };
 
   return (
     <>
@@ -60,7 +77,13 @@ export default function DestinationComponent() {
           <DivGridTwo>
             <Navigation>
               {options.map((item) => (
-                <NavigationOptions>{item.name}</NavigationOptions>
+                <NavigationOptions
+                  className={item.value ? "true" : "false"}
+                  value={item.page}
+                  onClick={(e) => handleClick(e)}
+                >
+                  {item.name}
+                </NavigationOptions>
               ))}
 
               {/* <NavigationOptions>mars</NavigationOptions>
