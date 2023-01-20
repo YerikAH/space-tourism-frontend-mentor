@@ -11,22 +11,18 @@ export const DESTINATION_OPTIONS: MenuDestination[] = [
   {
     name: "moon",
     value: true,
-    page: "moon",
   },
   {
     name: "mars",
     value: false,
-    page: "mars",
   },
   {
     name: "europa",
     value: false,
-    page: "europa",
   },
   {
     name: "titan",
     value: false,
-    page: "titan",
   },
 ];
 

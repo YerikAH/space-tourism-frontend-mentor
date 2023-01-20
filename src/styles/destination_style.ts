@@ -133,7 +133,7 @@ export const ImageRespon = styled.div`
 export const ImagePlanet = styled.img`
   width: 100%;
   height: auto;
-  animation: planet 250s linear 0s infinite;
+  animation: planet 300s linear 0s infinite;
   @keyframes planet {
     from {
       transform: rotate(0deg);
@@ -186,8 +186,8 @@ export const NavigationOptions = styled.button`
     height: 3px;
     transform: ${(props) =>
       props.className === "true" ? "scale(1)" : "scaleX(0)"};
-    background-color: ${(props) =>
-      props.className === "true" ? "var(--white)" : "var(--purple-light)"};
+    background-color: var(--white);
+    opacity: ${(props) => props.className === "false" && "0.5"};
     bottom: -8px;
     transition: 0.3s;
     position: absolute;
