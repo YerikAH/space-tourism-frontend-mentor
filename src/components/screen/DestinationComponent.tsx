@@ -20,8 +20,12 @@ import {
 import DestinationNav from "../destination/DestinationNav";
 import DestinationInfo from "../destination/DestinationInfo";
 import DestinationImage from "../destination/DestinationImage";
+import useFetch from "../../hook/useFetch";
 
 export default function DestinationComponent() {
+  const [dataJson, errorJson] = useFetch("../../public/data.json");
+  console.log(dataJson);
+
   const [data, setData] = useState<DataDestination>(MOON_DESTINATION);
   const [options, setOptions] =
     useState<MenuDestination[]>(DESTINATION_OPTIONS);
