@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import { RootObject } from "../interface/data";
 
 function useFetch(url: string) {
-  const [dataJson, setDataJson] = useState();
+  const [dataJson, setDataJson] = useState<RootObject>();
   const [errorJson, setErrorJson] = useState(false);
   async function getData(url: string) {
     const urlLocal = url;
     try {
       const res = await fetch(urlLocal);
-      const json = res.json();
+      const json: Promise<RootObject> = res.json();
       if (!res.ok) {
         const errorObj = {
           statusText: res.statusText,
@@ -21,7 +22,6 @@ function useFetch(url: string) {
       setErrorJson(true);
     }
   }
-
   useEffect(() => {
     getData(url);
   }, [url]);
