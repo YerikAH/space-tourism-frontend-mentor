@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { DATA_INITIAL_STATE } from "../constant/data_initial_state";
 import { RootObject } from "../interface/data";
 
 function useFetch(url: string) {
-  const [dataJson, setDataJson] = useState<RootObject>();
-  const [errorJson, setErrorJson] = useState(false);
+  const [dataJson, setDataJson] = useState<RootObject | null>(
+    DATA_INITIAL_STATE
+  );
   async function getData(url: string) {
     const urlLocal = url;
     try {
@@ -17,15 +19,14 @@ function useFetch(url: string) {
         throw errorObj;
       }
       setDataJson(await json);
-      setErrorJson(false);
     } catch (err) {
-      setErrorJson(true);
+      setDataJson(null);
     }
   }
   useEffect(() => {
     getData(url);
   }, [url]);
 
-  return [dataJson, errorJson];
+  return [dataJson];
 }
 export default useFetch;
