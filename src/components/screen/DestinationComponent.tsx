@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 /* components */
 import NavegatorComponent from "../NavegatorComponent";
 /* styles */
@@ -10,24 +10,16 @@ import {
   SectionStyle,
 } from "../../styles/destination_style";
 import { DataDestination, MenuDestination } from "../../interface/interface";
-import {
-  DESTINATION_OPTIONS,
-  EUROPA_DESTINATION,
-  MARS_DESTINATION,
-  MOON_DESTINATION,
-  TITAN_DESTINATION,
-} from "../../constant/constDestination";
 import DestinationNav from "../destination/DestinationNav";
 import DestinationInfo from "../destination/DestinationInfo";
 import DestinationImage from "../destination/DestinationImage";
 import useFetch from "../../hook/useFetch";
+import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
 
 export default function DestinationComponent() {
   const [dataJson, errorJson] = useFetch("../../public/data.json");
-  if (dataJson !== null) {
-    console.log(dataJson.destination);
-  }
-  const [data, setData] = useState<DataDestination>(MOON_DESTINATION);
+  const [indexData, setIndexData] = useState("moon");
+  const [data, setData] = useState<DataDestination>();
   const [options, setOptions] =
     useState<MenuDestination[]>(DESTINATION_OPTIONS);
 
@@ -47,16 +39,16 @@ export default function DestinationComponent() {
 
   function changeData(getValue: string, getOptions: MenuDestination[]) {
     if (getValue === "moon") {
-      setData(MOON_DESTINATION);
+      // get data
       selectMenuOptions(getValue, getOptions);
     } else if (getValue === "mars") {
-      setData(MARS_DESTINATION);
+      // get data
       selectMenuOptions(getValue, getOptions);
     } else if (getValue === "europa") {
-      setData(EUROPA_DESTINATION);
+      // get data
       selectMenuOptions(getValue, getOptions);
     } else {
-      setData(TITAN_DESTINATION);
+      // get data
       selectMenuOptions(getValue, getOptions);
     }
   }
@@ -67,6 +59,9 @@ export default function DestinationComponent() {
     }
     setOptions(getOptions);
   }
+
+  useEffect(() => {}, []);
+
   return (
     <>
       <BgGround />

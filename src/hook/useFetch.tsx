@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DATA_INITIAL_STATE } from "../constant/data_initial_state";
+import { DATA_INITIAL_STATE } from "../constant/dataInitialState";
 import { RootObject } from "../interface/data";
 
 function useFetch(url: string) {
