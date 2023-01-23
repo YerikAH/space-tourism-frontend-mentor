@@ -15,6 +15,7 @@ import DestinationInfo from "../destination/DestinationInfo";
 import DestinationImage from "../destination/DestinationImage";
 import useFetch from "../../hook/useFetch";
 import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
+import { DestinationOptions } from "../../interface/options";
 
 export default function DestinationComponent() {
   const [dataJson, errorJson] = useFetch("../../public/data.json");
@@ -26,16 +27,8 @@ export default function DestinationComponent() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const getValue: string = (e.target as HTMLButtonElement).value;
     let getOptions: MenuDestination[] = [...options];
-    resetMenuOptions(getOptions);
     changeData(getValue, getOptions);
   };
-
-  function resetMenuOptions(getOptions: MenuDestination[]) {
-    getOptions.map((item) => {
-      item.value = false;
-    });
-    setOptions(getOptions);
-  }
 
   function changeData(getValue: string, getOptions: MenuDestination[]) {
     if (getValue === "moon") {
@@ -58,6 +51,21 @@ export default function DestinationComponent() {
       selectOption.value = !selectOption?.value;
     }
     setOptions(getOptions);
+  }
+
+  function changeTrueValue(obj: DestinationOptions[], myVar: string) {
+    // buscar el objeto cuyo valor es true y cambiarlo a false
+    obj = obj.map((o) => {
+      if (o.value === true) {
+        return { ...o, value: false };
+      }
+      return o;
+    });
+
+    // buscar el objeto cuyo nombre coincide con myVar y cambiar su valor a true
+    const index = obj.findIndex((o) => o.name === myVar);
+    obj[index] = { ...obj[index], value: true };
+    return obj;
   }
 
   useEffect(() => {}, []);
