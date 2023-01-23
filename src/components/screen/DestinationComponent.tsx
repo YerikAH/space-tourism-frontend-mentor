@@ -24,7 +24,9 @@ import useFetch from "../../hook/useFetch";
 
 export default function DestinationComponent() {
   const [dataJson, errorJson] = useFetch("../../public/data.json");
-
+  if (dataJson !== null) {
+    console.log(dataJson.destination);
+  }
   const [data, setData] = useState<DataDestination>(MOON_DESTINATION);
   const [options, setOptions] =
     useState<MenuDestination[]>(DESTINATION_OPTIONS);
