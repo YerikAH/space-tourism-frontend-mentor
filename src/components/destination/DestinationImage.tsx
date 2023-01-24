@@ -19,7 +19,7 @@ export default function DestinationImage({ data }: DestinationDataProps) {
         </DivTitle>
       </DivStart>
       <ImageRespon>
-        <ImagePlanet src={data.imagePath} />
+        <ImagePlanet src={data.image_path} />
       </ImageRespon>
     </>
   );

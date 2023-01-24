@@ -12,7 +12,7 @@ import {
 import DestinationNav from "../destination/DestinationNav";
 import DestinationInfo from "../destination/DestinationInfo";
 import DestinationImage from "../destination/DestinationImage";
-import useFetch from "../../hook/useFetch";
+import { useFetch } from "../../hook/useFetch";
 import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
 import { DestinationOptions } from "../../interface/options";
 import { Destination } from "../../interface/data";
@@ -35,15 +35,12 @@ export default function DestinationComponent() {
     const value = getValue === undefined ? "moon" : getValue;
     if (dataJson != null && !load) {
       let destination: Destination[] = dataJson.destination;
-      console.log("No hay ningun error");
-
       let objMoon: Destination | undefined = destination.find(
         (item) => item.title === value
       );
 
       if (objMoon === undefined) {
         objMoon = DESTINATION_INITIAL_STATE;
-        console.log("Hay error");
       }
       setData(objMoon);
     }
@@ -61,12 +58,13 @@ export default function DestinationComponent() {
 
     setOptions(obj);
   }
-
   useEffect(() => {
-    changeTrueValue(options);
-    changeData();
-    console.log(data);
-  }, []);
+    if (!load) {
+      console.log(dataJson);
+      changeTrueValue(options);
+      changeData();
+    }
+  }, [load]);
 
   return (
     <>
