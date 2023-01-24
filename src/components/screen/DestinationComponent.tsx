@@ -41,7 +41,8 @@ export default function DestinationComponent() {
 
   function changeData(getValue?: string) {
     const value = getValue === undefined ? "moon" : getValue;
-    if (dataJson != null && !load) {
+
+    if (dataJson != null) {
       const destination: Destination[] = dataJson.destination;
       let objMoon: Destination | undefined = destination.find(
         (item) => item.title === value
