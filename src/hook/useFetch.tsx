@@ -33,5 +33,5 @@ export function useFetch(url: string) {
     getData(url);
   }, [url]);
 
-  return { dataJson, load }; // me retorna data_initial_state
+  return { dataJson, load };
 }
