@@ -1,8 +1,9 @@
+import CrewComponent from "./components/screen/CrewComponent";
 import DestinationComponent from "./components/screen/DestinationComponent";
 import HomeComponent from "./components/screen/HomeComponent";
 
 function App() {
-  return <HomeComponent />;
+  return <CrewComponent />;
 }
 
 export default App;
