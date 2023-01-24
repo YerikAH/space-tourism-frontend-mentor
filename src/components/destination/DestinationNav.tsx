@@ -1,11 +1,8 @@
 import React from "react";
-import { DestinationNavProps } from "../../interface/props";
+import { NavProps } from "../../interface/props";
 import { Navigation, NavigationOptions } from "../../styles/destination_style";
 
-export default function DestinationNav({
-  options,
-  handleClick,
-}: DestinationNavProps) {
+export default function DestinationNav({ options, handleClick }: NavProps) {
   return (
     <Navigation>
       {options.map((item) => (

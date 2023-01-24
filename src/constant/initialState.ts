@@ -1,4 +1,4 @@
-import { Destination, Home } from "../interface/data";
+import { Crew, Destination, Home } from "../interface/data";
 
 export const DESTINATION_INITIAL_STATE: Destination = {
   title: "",
@@ -12,4 +12,11 @@ export const HOME_INITIAL_STATE: Home = {
   text: "",
   subtitle: "",
   button: "",
+};
+
+export const CREW_INITIAL_STATE: Crew = {
+  name: "",
+  description: "",
+  image_path: "",
+  job: "",
 };

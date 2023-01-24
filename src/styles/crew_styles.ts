@@ -154,3 +154,23 @@ export const TextBodyOne = styled.p`
     max-width: 27.75rem;
   }
 `;
+
+export const Navigation = styled.nav`
+  display: flex;
+  gap: 1rem;
+  @media (min-width: 720px) {
+    gap: 1.5rem;
+  }
+`;
+export const NavigationOptions = styled.button`
+  background: var(--white);
+  mix-blend-mode: normal;
+  opacity: ${(props) => (props.className === "true" ? "1" : "0.17")};
+  border-radius: 255px;
+  width: 0.625rem;
+  height: 0.625rem;
+  @media (min-width: 720px) {
+    width: 0.938rem;
+    height: 0.938rem;
+  }
+`;

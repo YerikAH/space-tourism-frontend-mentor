@@ -1,4 +1,5 @@
 import React from "react";
+import { CrewDataProps } from "../../interface/props";
 import {
   BStyle,
   DivStart,
@@ -9,7 +10,7 @@ import {
   TextBodyOne,
 } from "../../styles/crew_styles";
 
-export default function CrewImage() {
+export default function CrewImage({ data }: CrewDataProps) {
   return (
     <>
       <DivStart>
@@ -23,7 +24,7 @@ export default function CrewImage() {
         <ImageCrew />
       </ImageRespon>
 
-      <TextBodyOne></TextBodyOne>
+      <TextBodyOne>{data.description}</TextBodyOne>
     </>
   );
 }
