@@ -5,7 +5,7 @@ export interface Home {
   button: string;
 }
 
-export interface Planet {
+export interface Destination {
   image_path: string;
   title: string;
   description: string;
@@ -13,42 +13,22 @@ export interface Planet {
   time: string;
 }
 
-export interface Destination {
-  moon: Planet;
-  mars: Planet;
-  europa: Planet;
-  titan: Planet;
-}
-
-export interface Person {
+export interface Crew {
   image_path: string;
   name: string;
   job: string;
   description: string;
 }
 
-export interface Crew {
-  douglas_hurley: Person;
-  mark_shuttleworth: Person;
-  victor_glover: Person;
-  anousheh_ansari: Person;
-}
-
-export interface TechChild {
+export interface Tech {
   image_path: string;
   name: string;
   description: string;
 }
 
-export interface Tech {
-  launch_vehicle: TechChild;
-  space_port: TechChild;
-  space_capsule: TechChild;
-}
-
 export interface RootObject {
-  home: Home;
-  destination: Destination;
-  crew: Crew;
-  tech: Tech;
+  home: Home[];
+  destination: Destination[];
+  crew: Crew[];
+  tech: Tech[];
 }

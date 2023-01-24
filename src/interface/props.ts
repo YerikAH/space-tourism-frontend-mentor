@@ -1,9 +1,10 @@
-import { DataDestination, MenuDestination } from "./interface";
+import { Destination } from "./data";
+import { DestinationOptions } from "./options";
 
 export interface DestinationNavProps {
-  options: MenuDestination[];
+  options: DestinationOptions[];
   handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 export interface DestinationDataProps {
-  data: DataDestination;
+  data: Destination;
 }

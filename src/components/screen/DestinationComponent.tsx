@@ -9,21 +9,21 @@ import {
   MainStyle,
   SectionStyle,
 } from "../../styles/destination_style";
-import { DataDestination, MenuDestination } from "../../interface/interface";
 import DestinationNav from "../destination/DestinationNav";
 import DestinationInfo from "../destination/DestinationInfo";
 import DestinationImage from "../destination/DestinationImage";
 import useFetch from "../../hook/useFetch";
 import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
 import { DestinationOptions } from "../../interface/options";
+import { Destination } from "../../interface/data";
+import { DESTINATION_INITIAL_STATE } from "../../constant/initialState";
 
 export default function DestinationComponent() {
   const envUrl: string = import.meta.env.VITE_KEY_DATA_URL;
-  const [dataJson, errorJson] = useFetch(envUrl);
-  const [indexData, setIndexData] = useState("moon");
-  const [data, setData] = useState<DataDestination>();
+  const { dataJson, load } = useFetch(envUrl);
+  const [data, setData] = useState<Destination>(DESTINATION_INITIAL_STATE);
   const [options, setOptions] =
-    useState<MenuDestination[]>(DESTINATION_OPTIONS);
+    useState<DestinationOptions[]>(DESTINATION_OPTIONS);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const getValue: string = (e.target as HTMLButtonElement).value;
@@ -31,30 +31,42 @@ export default function DestinationComponent() {
     changeData(getValue);
   };
 
-  function changeData(getValue: string) {
-    if (getValue === "moon") {
-      // get data
-    } else if (getValue === "mars") {
-      // get data
-    } else if (getValue === "europa") {
-      // get data
-    } else {
-      // get data
+  function changeData(getValue?: string) {
+    const value = getValue === undefined ? "moon" : getValue;
+    if (dataJson != null && !load) {
+      let destination: Destination[] = dataJson.destination;
+      console.log("No hay ningun error");
+
+      let objMoon: Destination | undefined = destination.find(
+        (item) => item.title === value
+      );
+
+      if (objMoon === undefined) {
+        objMoon = DESTINATION_INITIAL_STATE;
+        console.log("Hay error");
+      }
+      setData(objMoon);
     }
   }
-  function changeTrueValue(obj: DestinationOptions[], myVar: string) {
+  function changeTrueValue(obj: DestinationOptions[], myVar?: string) {
+    const valueVar = myVar === undefined ? "moon" : myVar;
     obj = obj.map((o) => {
       if (o.value === true) {
         return { ...o, value: false };
       }
       return o;
     });
-    const index = obj.findIndex((o) => o.name === myVar);
+    const index = obj.findIndex((o) => o.name === valueVar);
     obj[index] = { ...obj[index], value: true };
-    return obj;
+
+    setOptions(obj);
   }
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    changeTrueValue(options);
+    changeData();
+    console.log(data);
+  }, []);
 
   return (
     <>

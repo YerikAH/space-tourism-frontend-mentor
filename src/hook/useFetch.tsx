@@ -6,8 +6,10 @@ function useFetch(url: string) {
   const [dataJson, setDataJson] = useState<RootObject | null>(
     DATA_INITIAL_STATE
   );
+  const [load, setLoad] = useState(false);
   async function getData(url: string) {
     const urlLocal = url;
+    setLoad(true);
     try {
       const res = await fetch(urlLocal);
       const json: Promise<RootObject> = res.json();
@@ -19,14 +21,16 @@ function useFetch(url: string) {
         throw errorObj;
       }
       setDataJson(await json);
+      setLoad(false);
     } catch (err) {
       setDataJson(null);
+      setLoad(false);
     }
   }
   useEffect(() => {
     getData(url);
   }, [url]);
 
-  return [dataJson];
+  return { dataJson, load };
 }
 export default useFetch;
