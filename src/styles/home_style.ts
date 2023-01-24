@@ -123,6 +123,7 @@ export const CircleStyleButton = styled.button`
   text-align: center;
   letter-spacing: 1.25px;
   transition: 0.3s;
+  text-transform: uppercase;
   font: normal normal 400 1.25rem/1.438rem var(--font-bellefair);
   &:hover {
     box-shadow: 0px 0px 0px 80px var(--white-transparent-pale);

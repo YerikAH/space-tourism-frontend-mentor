@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import {
   BgGround,
   CircleStyleButton,
@@ -12,7 +13,32 @@ import {
 } from "../../styles/home_style";
 import NavegatorComponent from "../NavegatorComponent";
 
+import { useFetch } from "../../hook/useFetch";
+import { Home } from "../../interface/data";
+import { HOME_INITIAL_STATE } from "../../constant/initialState";
+
 export default function HomeComponent() {
+  const envUrl: string = import.meta.env.VITE_KEY_DATA_URL;
+  const [data, setData] = useState<Home>(HOME_INITIAL_STATE);
+  const { dataJson, load } = useFetch(envUrl);
+
+  function updateData() {
+    if (dataJson != null) {
+      const dataObj: Home = {
+        title: dataJson.home[0].title,
+        text: dataJson.home[0].text,
+        subtitle: dataJson.home[0].subtitle,
+        button: dataJson.home[0].button,
+      };
+      setData(dataObj);
+    }
+  }
+  useEffect(() => {
+    if (!load) {
+      updateData();
+    }
+  }, [load]);
+
   return (
     <>
       <BgGround />
@@ -20,17 +46,12 @@ export default function HomeComponent() {
       <MainStyle>
         <SectionStyle>
           <DivGridOne>
-            <HeadlineSecond>SO, YOU WANT TO TRAVEL TO</HeadlineSecond>
-            <HeadlinePrincipal>SPACE</HeadlinePrincipal>
-            <TextBodyOne>
-              Let’s face it; if you want to go to space, you might as well
-              genuinely go to outer space and not hover kind of on the edge of
-              it. Well sit back, and relax because we’ll give you a truly out of
-              this world experience!
-            </TextBodyOne>
+            <HeadlineSecond>{data.subtitle}</HeadlineSecond>
+            <HeadlinePrincipal>{data.title}</HeadlinePrincipal>
+            <TextBodyOne>{data.text}</TextBodyOne>
           </DivGridOne>
           <DivGridTwo>
-            <CircleStyleButton>EXPLORE</CircleStyleButton>
+            <CircleStyleButton>{data.button}</CircleStyleButton>
           </DivGridTwo>
         </SectionStyle>
       </MainStyle>

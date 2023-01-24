@@ -1,8 +1,8 @@
 import { Destination } from "./data";
-import { DestinationOptions } from "./options";
+import { Options } from "./options";
 
 export interface DestinationNavProps {
-  options: DestinationOptions[];
+  options: Options[];
   handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 export interface DestinationDataProps {
