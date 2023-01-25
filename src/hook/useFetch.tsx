@@ -33,5 +33,6 @@ export function useFetch(url: string) {
     getData(url);
   }, [url]);
 
+  //   useMemo
   return { dataJson, load };
 }
