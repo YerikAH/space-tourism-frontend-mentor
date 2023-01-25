@@ -4,9 +4,11 @@ import {
   BStyle,
   DivStart,
   DivTitle,
+  HeadlinePrincipal,
   HeadlineSecond,
   ImageCrew,
   ImageRespon,
+  SubtitleOne,
   TextBodyOne,
 } from "../../styles/crew_styles";
 
@@ -20,11 +22,14 @@ export default function CrewImage({ data }: CrewDataProps) {
         </DivTitle>
       </DivStart>
 
-      <ImageRespon>
+      <ImageRespon className="mobile">
         <ImageCrew src={data.image_path} />
       </ImageRespon>
 
-      <TextBodyOne className="mobile">{data.description}</TextBodyOne>
+      <SubtitleOne className="tablet">{data.job}</SubtitleOne>
+      <HeadlinePrincipal className="tablet">{data.name}</HeadlinePrincipal>
+
+      <TextBodyOne className="tablet">{data.description}</TextBodyOne>
     </>
   );
 }

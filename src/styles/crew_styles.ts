@@ -1,41 +1,5 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const textStyle = css`
-  color: var(--purple-light);
-  font: normal normal 400 0.938rem/1.563rem var(--font-barlow);
-  text-align: center;
-  width: 100%;
-  margin-top: 1rem;
-  @media (min-width: 720px) {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    max-width: 35.813rem;
-    margin-top: 0.5rem;
-  }
-  @media (min-width: 1000px) {
-    font-size: 1.125rem;
-    line-height: 2rem;
-    text-align: left;
-    max-width: 27.75rem;
-  }
-`;
-const ImageStyle = css`
-  width: 100%;
-  margin: 2rem 0;
-  max-height: 14.938rem;
-  height: 100%;
-  border-bottom: 1px solid var(--black);
-  @media (min-width: 720px) {
-    width: 18.75rem;
-    height: 18.75rem;
-    margin-top: 3.75rem;
-  }
-  @media (min-width: 1000px) {
-    width: 27.813rem;
-    height: 27.813rem;
-    margin-top: 4.188rem;
-  }
-`;
 /* images */
 import bgDestinationDesktop from "../assets/crew/background-crew-desktop.jpg";
 import bgDestinationTablet from "../assets/crew/background-crew-tablet.jpg";
@@ -90,6 +54,7 @@ export const DivGridTwo = styled.div`
   margin-bottom: 2rem;
   @media (min-width: 720px) {
     margin-top: 3.313rem;
+    margin-bottom: 0rem;
   }
   @media (min-width: 1000px) {
     place-items: start;
@@ -151,12 +116,27 @@ export const HeadlineSecond = styled.h2`
   }
 `;
 export const ImageRespon = styled.div`
-  ${ImageStyle}
+  width: 100%;
+  margin: 2rem 0;
+  max-height: 14.938rem;
+  height: 100%;
+  display: ${(props) => (props.className === "mobile" ? "block" : "none")};
+  border-bottom: 1px solid var(--black);
+  @media (min-width: 720px) {
+    width: 28.523rem;
+    max-height: 35.75rem;
+    margin-top: 3.75rem;
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
+    border: none;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1000px) {
+    width: 27.813rem;
+    height: 27.813rem;
+    margin-top: 4.188rem;
+  }
 `;
-export const ImageResponTwo = styled.div`
-  display: none;
-  ${ImageStyle}
-`;
+
 export const ImageCrew = styled.img`
   width: 100%;
   height: 100%;
@@ -164,11 +144,25 @@ export const ImageCrew = styled.img`
 `;
 
 export const TextBodyOne = styled.p`
-  ${textStyle}
-  display: none;
-`;
-export const TextBodyTwo = styled.p`
-  ${textStyle}
+  color: var(--purple-light);
+  font: normal normal 400 0.938rem/1.563rem var(--font-barlow);
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+  display: ${(props) => (props.className === "mobile" ? "block" : "none")};
+  @media (min-width: 720px) {
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
+    font-size: 1rem;
+    line-height: 1.75rem;
+    max-width: 28.625rem;
+    margin-top: 0.5rem;
+  }
+  @media (min-width: 1000px) {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    text-align: left;
+    max-width: 27.75rem;
+  }
 `;
 
 export const Navigation = styled.nav`
@@ -176,6 +170,7 @@ export const Navigation = styled.nav`
   gap: 1rem;
   @media (min-width: 720px) {
     gap: 1.5rem;
+    margin-top: 2.5rem;
   }
 `;
 export const NavigationOptions = styled.button`
@@ -197,14 +192,25 @@ export const HeadlinePrincipal = styled.h2`
   text-transform: uppercase;
   color: var(--white);
   margin-top: 0.5rem;
+  display: ${(props) => (props.className === "mobile" ? "block" : "none")};
+  @media (min-width: 720px) {
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
+
+    font-size: 2.5rem;
+    line-height: 2.875rem;
+  }
 `;
 export const SubtitleOne = styled.h3`
   font: normal normal 400 1rem/1.2rem var(--font-bellefair);
   text-align: center;
   text-transform: uppercase;
-
   color: var(--white);
-
   mix-blend-mode: normal;
   opacity: 0.5;
+  display: ${(props) => (props.className === "mobile" ? "block" : "none")};
+  @media (min-width: 720px) {
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
+    font-size: 1.5rem;
+    margin-top: 3.75rem;
+  }
 `;
