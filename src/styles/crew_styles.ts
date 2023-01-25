@@ -1,4 +1,24 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const textStyle = css`
+  color: var(--purple-light);
+  font: normal normal 400 0.938rem/1.563rem var(--font-barlow);
+  text-align: center;
+  width: 100%;
+  margin-top: 0.75rem;
+  @media (min-width: 720px) {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    max-width: 35.813rem;
+    margin-top: 0.5rem;
+  }
+  @media (min-width: 1000px) {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    text-align: left;
+    max-width: 27.75rem;
+  }
+`;
 
 /* images */
 import bgDestinationDesktop from "../assets/crew/background-crew-desktop.jpg";
@@ -26,6 +46,7 @@ export const MainStyle = styled.main`
   margin: 0 auto;
   position: relative;
   width: 100%;
+  padding: 0 2rem;
   @media (min-width: 720px) {
     margin-top: 2.5rem;
   }
@@ -115,10 +136,11 @@ export const HeadlineSecond = styled.h2`
   }
 `;
 export const ImageRespon = styled.div`
-  width: 10.625rem;
-  height: 10.625rem;
+  width: 100%;
   margin-top: 2rem;
-  overflow: hidden;
+  max-height: 14.938rem;
+  height: 100%;
+  border-bottom: 1px solid var(--black);
   @media (min-width: 720px) {
     width: 18.75rem;
     height: 18.75rem;
@@ -132,27 +154,12 @@ export const ImageRespon = styled.div`
 `;
 export const ImageCrew = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 `;
 
 export const TextBodyOne = styled.p`
-  color: var(--purple-light);
-  font: normal normal 400 0.938rem/1.563rem var(--font-barlow);
-  text-align: center;
-  width: 100%;
-  margin-top: 0.75rem;
-  @media (min-width: 720px) {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    max-width: 35.813rem;
-    margin-top: 0.5rem;
-  }
-  @media (min-width: 1000px) {
-    font-size: 1.125rem;
-    line-height: 2rem;
-    text-align: left;
-    max-width: 27.75rem;
-  }
+  ${textStyle}
 `;
 
 export const Navigation = styled.nav`
@@ -174,3 +181,6 @@ export const NavigationOptions = styled.button`
     height: 0.938rem;
   }
 `;
+
+export const HeadlinePrincipal = styled.h2``;
+export const SubtitleOne = styled.h3``;

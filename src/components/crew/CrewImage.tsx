@@ -21,10 +21,10 @@ export default function CrewImage({ data }: CrewDataProps) {
       </DivStart>
 
       <ImageRespon>
-        <ImageCrew />
+        <ImageCrew src={data.image_path} />
       </ImageRespon>
 
-      <TextBodyOne>{data.description}</TextBodyOne>
+      <TextBodyOne className="mobile">{data.description}</TextBodyOne>
     </>
   );
 }
