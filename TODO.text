@@ -1,8 +1,0 @@
-home
-  - "../assets/home/background-home-desktop.jpg";
-  - "../assets/home/background-home-tablet.jpg";
-  - "../assets/home/background-home-mobile.jpg";
-destination
-  - "../assets/destination/background-destination-desktop.jpg";
-  - "../assets/destination/background-destination-tablet.jpg";
-  - "../assets/destination/background-destination-mobile.jpg";
