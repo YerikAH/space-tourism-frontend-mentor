@@ -21,6 +21,11 @@
   box-sizing: border-box;
   font-family: Arial;
 }
+
+html {
+  overflow-x: none;
+}
+
 a,
 li {
   text-decoration: none;

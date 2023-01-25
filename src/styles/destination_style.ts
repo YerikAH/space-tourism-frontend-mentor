@@ -29,7 +29,7 @@ export const MainStyle = styled.main`
   @media (min-width: 720px) {
     margin-top: 2.5rem;
   }
-  @media (min-width: 720px) {
+  @media (min-width: 1000px) {
     margin-top: 4.75rem;
   }
 `;

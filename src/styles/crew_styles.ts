@@ -30,8 +30,8 @@ export const MainStyle = styled.main`
   @media (min-width: 720px) {
     margin-top: 2.5rem;
   }
-  @media (min-width: 720px) {
-    margin-top: 4.75rem;
+  @media (min-width: 1000px) {
+    margin-top: 3.875rem;
   }
 `;
 export const SectionStyle = styled.section`
@@ -45,6 +45,12 @@ export const DivGridOne = styled.div`
   width: 100%;
   display: grid;
   place-items: center;
+  @media (min-width: 1000px) {
+    height: 100%;
+    place-items: start;
+    place-content: start;
+    padding: 0 2.375rem;
+  }
 `;
 export const DivGridTwo = styled.div`
   display: grid;
@@ -52,12 +58,13 @@ export const DivGridTwo = styled.div`
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  overflow: hidden;
   @media (min-width: 720px) {
     margin-top: 3.313rem;
     margin-bottom: 0rem;
   }
   @media (min-width: 1000px) {
-    place-items: start;
+    margin-top: 0;
   }
 `;
 export const DivStart = styled.div`
@@ -68,6 +75,9 @@ export const DivStart = styled.div`
   padding: 0 2.375rem;
   @media (min-width: 720px) {
     justify-content: start;
+  }
+  @media (min-width: 1000px) {
+    padding: 0;
   }
 `;
 export const DivTitle = styled.div`
@@ -131,9 +141,11 @@ export const ImageRespon = styled.div`
     margin-bottom: 0;
   }
   @media (min-width: 1000px) {
-    width: 27.813rem;
-    height: 27.813rem;
-    margin-top: 4.188rem;
+    margin-top: 0;
+    width: 35.5rem;
+    height: 44.5rem;
+    max-width: none;
+    max-height: none;
   }
 `;
 
@@ -162,6 +174,7 @@ export const TextBodyOne = styled.p`
     line-height: 2rem;
     text-align: left;
     max-width: 27.75rem;
+    margin-top: 1.688rem;
   }
 `;
 
@@ -171,6 +184,9 @@ export const Navigation = styled.nav`
   @media (min-width: 720px) {
     gap: 1.5rem;
     margin-top: 2.5rem;
+  }
+  @media (min-width: 1000px) {
+    margin-top: 7.5rem;
   }
 `;
 export const NavigationOptions = styled.button`
@@ -199,6 +215,11 @@ export const HeadlinePrincipal = styled.h2`
     font-size: 2.5rem;
     line-height: 2.875rem;
   }
+  @media (min-width: 1000px) {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    text-align: left;
+  }
 `;
 export const SubtitleOne = styled.h3`
   font: normal normal 400 1rem/1.2rem var(--font-bellefair);
@@ -212,5 +233,11 @@ export const SubtitleOne = styled.h3`
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     font-size: 1.5rem;
     margin-top: 3.75rem;
+  }
+  @media (min-width: 1000px) {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    text-align: left;
+    margin-top: 9.625rem;
   }
 `;
