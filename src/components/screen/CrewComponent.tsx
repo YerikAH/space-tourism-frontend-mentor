@@ -13,6 +13,7 @@ import {
   SectionStyle,
 } from "../../styles/crew_styles";
 import CrewImage from "../crew/CrewImage";
+import CrewInfo from "../crew/CrewInfo";
 import CrewNav from "../crew/CrewNav";
 import NavegatorComponent from "../NavegatorComponent";
 
@@ -64,7 +65,9 @@ export default function CrewComponent() {
             <CrewImage data={data} />
             <CrewNav handleClick={handleClick} options={options} />
           </DivGridOne>
-          <DivGridTwo></DivGridTwo>
+          <DivGridTwo>
+            <CrewInfo data={data} />
+          </DivGridTwo>
         </SectionStyle>
       </MainStyle>
     </>

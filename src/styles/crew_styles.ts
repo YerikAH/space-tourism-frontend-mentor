@@ -5,7 +5,7 @@ const textStyle = css`
   font: normal normal 400 0.938rem/1.563rem var(--font-barlow);
   text-align: center;
   width: 100%;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   @media (min-width: 720px) {
     font-size: 1rem;
     line-height: 1.75rem;
@@ -19,7 +19,23 @@ const textStyle = css`
     max-width: 27.75rem;
   }
 `;
-
+const ImageStyle = css`
+  width: 100%;
+  margin: 2rem 0;
+  max-height: 14.938rem;
+  height: 100%;
+  border-bottom: 1px solid var(--black);
+  @media (min-width: 720px) {
+    width: 18.75rem;
+    height: 18.75rem;
+    margin-top: 3.75rem;
+  }
+  @media (min-width: 1000px) {
+    width: 27.813rem;
+    height: 27.813rem;
+    margin-top: 4.188rem;
+  }
+`;
 /* images */
 import bgDestinationDesktop from "../assets/crew/background-crew-desktop.jpg";
 import bgDestinationTablet from "../assets/crew/background-crew-tablet.jpg";
@@ -70,9 +86,8 @@ export const DivGridTwo = styled.div`
   display: grid;
   place-items: center;
   width: 100%;
-  margin-top: 1.625rem;
-  padding: 0 1.625rem;
-  margin-bottom: 3.625rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   @media (min-width: 720px) {
     margin-top: 3.313rem;
   }
@@ -136,21 +151,11 @@ export const HeadlineSecond = styled.h2`
   }
 `;
 export const ImageRespon = styled.div`
-  width: 100%;
-  margin-top: 2rem;
-  max-height: 14.938rem;
-  height: 100%;
-  border-bottom: 1px solid var(--black);
-  @media (min-width: 720px) {
-    width: 18.75rem;
-    height: 18.75rem;
-    margin-top: 3.75rem;
-  }
-  @media (min-width: 1000px) {
-    width: 27.813rem;
-    height: 27.813rem;
-    margin-top: 4.188rem;
-  }
+  ${ImageStyle}
+`;
+export const ImageResponTwo = styled.div`
+  display: none;
+  ${ImageStyle}
 `;
 export const ImageCrew = styled.img`
   width: 100%;
@@ -159,6 +164,10 @@ export const ImageCrew = styled.img`
 `;
 
 export const TextBodyOne = styled.p`
+  ${textStyle}
+  display: none;
+`;
+export const TextBodyTwo = styled.p`
   ${textStyle}
 `;
 
@@ -182,5 +191,20 @@ export const NavigationOptions = styled.button`
   }
 `;
 
-export const HeadlinePrincipal = styled.h2``;
-export const SubtitleOne = styled.h3``;
+export const HeadlinePrincipal = styled.h2`
+  font: normal normal 400 1.5rem/1.75rem var(--font-bellefair);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-top: 0.5rem;
+`;
+export const SubtitleOne = styled.h3`
+  font: normal normal 400 1rem/1.2rem var(--font-bellefair);
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--white);
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
+`;

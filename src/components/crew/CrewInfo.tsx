@@ -3,21 +3,20 @@ import { CrewDataProps } from "../../interface/props";
 import {
   HeadlinePrincipal,
   ImageCrew,
-  ImageRespon,
-  TextBodyOne,
+  ImageResponTwo,
+  TextBodyTwo,
+  SubtitleOne,
 } from "../../styles/crew_styles";
-import { Subtitle } from "../../styles/destination_style";
-
 export default function CrewInfo({ data }: CrewDataProps) {
   return (
     <>
-      <Subtitle>{data.job}</Subtitle>
+      <SubtitleOne>{data.job}</SubtitleOne>
       <HeadlinePrincipal>{data.name}</HeadlinePrincipal>
-      <TextBodyOne>{data.description}</TextBodyOne>
+      <TextBodyTwo>{data.description}</TextBodyTwo>
 
-      <ImageRespon>
+      <ImageResponTwo>
         <ImageCrew src={data.image_path} />
-      </ImageRespon>
+      </ImageResponTwo>
     </>
   );
 }
