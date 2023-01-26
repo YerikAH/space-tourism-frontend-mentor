@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { CREW_INITIAL_STATE } from "../../constant/initialState";
 import { CREW_OPTIONS } from "../../constant/optionsInitialState";
 import { changeTrueValue } from "../../helpers/changeTrueValue";
@@ -20,7 +20,9 @@ import NavegatorComponent from "../NavegatorComponent";
 export default function CrewComponent() {
   const envUrl: string = import.meta.env.VITE_KEY_DATA_URL;
 
-  const { dataJson, load } = useFetch(envUrl);
+  // const { dataJson, load } = useFetch(envUrl);
+  const fetchData = useCallback(() => useFetch(envUrl), []);
+  const { dataJson, load } = fetchData();
   const [data, setData] = useState<Crew>(CREW_INITIAL_STATE);
   const [options, setOptions] = useState<Options[]>(CREW_OPTIONS);
 
