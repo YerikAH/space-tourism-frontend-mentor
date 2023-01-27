@@ -1,0 +1,4 @@
+1. create context
+2. memo in context
+3. replace logic current
+34. create ui tech component
