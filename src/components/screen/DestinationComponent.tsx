@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+
 /* components */
 import NavegatorComponent from "../NavegatorComponent";
 import DestinationNav from "../destination/DestinationNav";
@@ -13,9 +14,6 @@ import {
   MainStyle,
   SectionStyle,
 } from "../../styles/destination_style";
-
-/* hook */
-import { useFetch } from "../../hook/useFetch";
 
 /* const */
 import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
@@ -42,17 +40,15 @@ export default function DestinationComponent() {
   function changeData(getValue?: string) {
     const value = getValue === undefined ? "moon" : getValue;
 
-    if (dataContext != null) {
-      const destination: Destination[] = dataContext.destination;
-      let objMoon: Destination | undefined = destination.find(
-        (item) => item.title === value
-      );
+    const destination: Destination[] = dataContext.destination;
+    let objMoon: Destination | undefined = destination.find(
+      (item) => item.title === value
+    );
 
-      if (objMoon === undefined) {
-        objMoon = DESTINATION_INITIAL_STATE;
-      }
-      setData(objMoon);
+    if (objMoon === undefined) {
+      objMoon = DESTINATION_INITIAL_STATE;
     }
+    setData(objMoon);
   }
 
   function selectOption(option: string) {

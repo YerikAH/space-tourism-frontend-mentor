@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import {
   BgGround,
@@ -13,34 +13,29 @@ import {
 } from "../../styles/home_style";
 import NavegatorComponent from "../NavegatorComponent";
 
-import { useFetch } from "../../hook/useFetch";
 import { Home } from "../../interface/data";
 import { HOME_INITIAL_STATE } from "../../constant/initialState";
+import FetchContext from "../../context/fetchContext";
 
 export default function HomeComponent() {
-  const envUrl: string = import.meta.env.VITE_KEY_DATA_URL;
+  const dataContext = useContext(FetchContext);
   const [data, setData] = useState<Home>(HOME_INITIAL_STATE);
-  const { dataJson, load } = useFetch(envUrl);
 
   function updateData() {
-    if (dataJson != null) {
-      const dataObj: Home = {
-        title: dataJson.home[0].title,
-        text: dataJson.home[0].text,
-        subtitle: dataJson.home[0].subtitle,
-        button: dataJson.home[0].button,
-      };
-      setData(dataObj);
-    }
+    const dataObj: Home = {
+      title: dataContext.home[0].title,
+      text: dataContext.home[0].text,
+      subtitle: dataContext.home[0].subtitle,
+      button: dataContext.home[0].button,
+    };
+    setData(dataObj);
   }
   useEffect(() => {
-    if (!load) {
-      updateData();
-    }
-  }, [load]);
+    updateData();
+  }, [dataContext]);
 
   return (
-    <>
+    <FetchContext.Provider value={dataContext}>
       <BgGround />
       <NavegatorComponent />
       <MainStyle>
@@ -55,6 +50,6 @@ export default function HomeComponent() {
           </DivGridTwo>
         </SectionStyle>
       </MainStyle>
-    </>
+    </FetchContext.Provider>
   );
 }
