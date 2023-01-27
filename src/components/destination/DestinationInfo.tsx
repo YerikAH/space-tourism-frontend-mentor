@@ -1,5 +1,6 @@
 import React from "react";
-import { DestinationDataProps } from "../../interface/props";
+import { Destination } from "../../interface/data";
+
 import {
   Decoration,
   DivBoxOne,
@@ -10,20 +11,25 @@ import {
   TextBodyTwo,
 } from "../../styles/destination_style";
 
-export default function DestinationInfo({ data }: DestinationDataProps) {
+export default function DestinationInfo({
+  title,
+  description,
+  distance,
+  time,
+}: Destination) {
   return (
     <>
-      <HeadlinePrincipal>{data.title}</HeadlinePrincipal>
-      <TextBodyOne>{data.description}</TextBodyOne>
+      <HeadlinePrincipal>{title}</HeadlinePrincipal>
+      <TextBodyOne>{description}</TextBodyOne>
       <Decoration></Decoration>
       <DivBoxOne>
         <DivBoxTwo>
           <Subtitle>AVG. DISTANCE</Subtitle>
-          <TextBodyTwo>{data.distance}</TextBodyTwo>
+          <TextBodyTwo>{distance}</TextBodyTwo>
         </DivBoxTwo>
         <DivBoxTwo>
           <Subtitle>Est. travel time</Subtitle>
-          <TextBodyTwo>{data.time}</TextBodyTwo>
+          <TextBodyTwo>{time}</TextBodyTwo>
         </DivBoxTwo>
       </DivBoxOne>
     </>

@@ -68,11 +68,16 @@ export default function DestinationComponent() {
       <MainStyle>
         <SectionStyle>
           <DivGridOne>
-            <DestinationImage data={data} />
+            <DestinationImage image_path={data.image_path} />
           </DivGridOne>
           <DivGridTwo>
             <DestinationNav handleClick={handleClick} options={options} />
-            <DestinationInfo data={data} />
+            <DestinationInfo
+              description={data.description}
+              distance={data.distance}
+              time={data.time}
+              title={data.title}
+            />
           </DivGridTwo>
         </SectionStyle>
       </MainStyle>

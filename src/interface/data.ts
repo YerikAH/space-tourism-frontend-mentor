@@ -6,18 +6,18 @@ export interface Home {
 }
 
 export interface Destination {
-  image_path: string;
-  title: string;
-  description: string;
-  distance: string;
-  time: string;
+  image_path?: string;
+  title?: string;
+  description?: string;
+  distance?: string;
+  time?: string;
 }
 
 export interface Crew {
-  image_path: string;
-  name: string;
-  job: string;
-  description: string;
+  image_path?: string;
+  name?: string;
+  job?: string;
+  description?: string;
 }
 
 export interface Tech {

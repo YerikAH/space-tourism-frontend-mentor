@@ -1,5 +1,5 @@
 import React from "react";
-import { CrewDataProps } from "../../interface/props";
+import { Crew } from "../../interface/data";
 import {
   HeadlinePrincipal,
   ImageCrew,
@@ -7,15 +7,15 @@ import {
   ImageRespon,
   TextBodyOne,
 } from "../../styles/crew_styles";
-export default function CrewInfo({ data }: CrewDataProps) {
+export default function CrewInfo({ job, name, description, image_path }: Crew) {
   return (
     <>
-      <SubtitleOne className="mobile">{data.job}</SubtitleOne>
-      <HeadlinePrincipal className="mobile">{data.name}</HeadlinePrincipal>
-      <TextBodyOne className="mobile">{data.description}</TextBodyOne>
+      <SubtitleOne className="mobile">{job}</SubtitleOne>
+      <HeadlinePrincipal className="mobile">{name}</HeadlinePrincipal>
+      <TextBodyOne className="mobile">{description}</TextBodyOne>
 
       <ImageRespon className="tablet">
-        <ImageCrew src={data.image_path} />
+        <ImageCrew src={image_path} />
       </ImageRespon>
     </>
   );

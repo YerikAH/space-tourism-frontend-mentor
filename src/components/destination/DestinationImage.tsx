@@ -1,5 +1,5 @@
 import React from "react";
-import { DestinationDataProps } from "../../interface/props";
+import { Destination, RootObject } from "../../interface/data";
 import {
   BStyle,
   DivStart,
@@ -9,7 +9,7 @@ import {
   ImageRespon,
 } from "../../styles/destination_style";
 
-export default function DestinationImage({ data }: DestinationDataProps) {
+export default function DestinationImage({ image_path }: Destination) {
   return (
     <>
       <DivStart>
@@ -19,7 +19,7 @@ export default function DestinationImage({ data }: DestinationDataProps) {
         </DivTitle>
       </DivStart>
       <ImageRespon>
-        <ImagePlanet src={data.image_path} />
+        <ImagePlanet src={image_path} />
       </ImageRespon>
     </>
   );

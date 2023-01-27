@@ -1,5 +1,6 @@
 import React from "react";
-import { CrewDataProps } from "../../interface/props";
+import { Crew } from "../../interface/data";
+
 import {
   BStyle,
   DivStart,
@@ -12,7 +13,12 @@ import {
   TextBodyOne,
 } from "../../styles/crew_styles";
 
-export default function CrewImage({ data }: CrewDataProps) {
+export default function CrewImage({
+  image_path,
+  job,
+  name,
+  description,
+}: Crew) {
   return (
     <>
       <DivStart>
@@ -23,13 +29,13 @@ export default function CrewImage({ data }: CrewDataProps) {
       </DivStart>
 
       <ImageRespon className="mobile">
-        <ImageCrew src={data.image_path} />
+        <ImageCrew src={image_path} />
       </ImageRespon>
 
-      <SubtitleOne className="tablet">{data.job}</SubtitleOne>
-      <HeadlinePrincipal className="tablet">{data.name}</HeadlinePrincipal>
+      <SubtitleOne className="tablet">{job}</SubtitleOne>
+      <HeadlinePrincipal className="tablet">{name}</HeadlinePrincipal>
 
-      <TextBodyOne className="tablet">{data.description}</TextBodyOne>
+      <TextBodyOne className="tablet">{description}</TextBodyOne>
     </>
   );
 }
