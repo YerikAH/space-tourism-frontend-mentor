@@ -30,7 +30,7 @@ export default function CrewComponent() {
   };
 
   function changeData(getValue?: string) {
-    const value = getValue === undefined ? "Douglas Hurley" : getValue;
+    const value = getValue === undefined ? "douglas hurley" : getValue;
 
     const crew: Crew[] = dataContext.crew;
     let objMoon: Crew | undefined = crew.find((item) => item.name === value);
@@ -39,6 +39,7 @@ export default function CrewComponent() {
       objMoon = CREW_INITIAL_STATE;
     }
     setData(objMoon);
+    setStyle(!style);
   }
 
   function selectOption(option: string) {
@@ -47,9 +48,8 @@ export default function CrewComponent() {
   }
 
   useEffect(() => {
-    selectOption("Douglas Hurley");
+    selectOption("douglas hurley");
     changeData();
-    setStyle(!style);
   }, [dataContext]);
   return (
     <FetchContext.Provider value={dataContext}>

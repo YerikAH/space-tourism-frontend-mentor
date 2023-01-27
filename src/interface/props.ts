@@ -8,4 +8,6 @@ export interface NavProps {
 export interface ContextProps {
   children: JSX.Element;
 }
-export interface StyleProps {}
+export interface StyleProps {
+  style: boolean;
+}
