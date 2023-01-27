@@ -11,3 +11,6 @@ export interface DestinationDataProps {
 export interface CrewDataProps {
   data: Crew;
 }
+export interface ContextProps {
+  children: JSX.Element;
+}
