@@ -1,4 +1,4 @@
-import { Crew, Destination, Home } from "../interface/data";
+import { Crew, Destination, Home, Tech } from "../interface/data";
 
 export const DESTINATION_INITIAL_STATE: Destination = {
   title: "",
@@ -19,4 +19,10 @@ export const CREW_INITIAL_STATE: Crew = {
   description: "",
   image_path: "",
   job: "",
+};
+
+export const TECH_INITIAL_STATE: Tech = {
+  name: "",
+  description: "",
+  image_path: "",
 };

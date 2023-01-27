@@ -21,19 +21,34 @@ export const DESTINATION_OPTIONS: Options[] = [
 
 export const CREW_OPTIONS: Options[] = [
   {
-    name: "Douglas Hurley",
+    name: "douglas hurley",
     value: true,
   },
   {
-    name: "Mark Shuttleworth",
+    name: "mark shuttleworth",
     value: false,
   },
   {
-    name: "Victor Glover",
+    name: "victor glover",
     value: false,
   },
   {
-    name: "Anousheh Ansari",
+    name: "anousheh ansari",
+    value: false,
+  },
+];
+
+export const TECH_OPTIONS: Options[] = [
+  {
+    name: "launch vehicle",
+    value: true,
+  },
+  {
+    name: "spaceport",
+    value: false,
+  },
+  {
+    name: "space capsule",
     value: false,
   },
 ];
