@@ -7,7 +7,7 @@ import { FetchProvider } from "./context/fetchContext";
 function App() {
   return (
     <FetchProvider>
-      <TechComponent />
+      <DestinationComponent />
     </FetchProvider>
   );
 }

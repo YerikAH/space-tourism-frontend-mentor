@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 /* components */
 import NavegatorComponent from "../NavegatorComponent";
 import DestinationNav from "../destination/DestinationNav";
@@ -25,11 +25,11 @@ import { DESTINATION_INITIAL_STATE } from "../../constant/initialState";
 import { Options } from "../../interface/options";
 import { Destination } from "../../interface/data";
 import { changeTrueValue } from "../../helpers/changeTrueValue";
+import FetchContext from "../../context/fetchContext";
 
 export default function DestinationComponent() {
-  const envUrl: string = import.meta.env.VITE_KEY_DATA_URL;
+  const dataContext = useContext(FetchContext);
 
-  const { dataJson, load } = useFetch(envUrl);
   const [data, setData] = useState<Destination>(DESTINATION_INITIAL_STATE);
   const [options, setOptions] = useState<Options[]>(DESTINATION_OPTIONS);
 
@@ -42,8 +42,8 @@ export default function DestinationComponent() {
   function changeData(getValue?: string) {
     const value = getValue === undefined ? "moon" : getValue;
 
-    if (dataJson != null) {
-      const destination: Destination[] = dataJson.destination;
+    if (dataContext != null) {
+      const destination: Destination[] = dataContext.destination;
       let objMoon: Destination | undefined = destination.find(
         (item) => item.title === value
       );
@@ -61,14 +61,12 @@ export default function DestinationComponent() {
   }
 
   useEffect(() => {
-    if (!load) {
-      selectOption("moon");
-      changeData();
-    }
-  }, [load]);
+    selectOption("moon");
+    changeData();
+  }, [dataContext]);
 
   return (
-    <>
+    <FetchContext.Provider value={dataContext}>
       <BgGround />
       <NavegatorComponent />
       <MainStyle>
@@ -82,6 +80,6 @@ export default function DestinationComponent() {
           </DivGridTwo>
         </SectionStyle>
       </MainStyle>
-    </>
+    </FetchContext.Provider>
   );
 }

@@ -7,7 +7,6 @@ export function useFetch(url: string) {
     DATA_INITIAL_STATE
   );
   const [load, setLoad] = useState(false);
-
   useEffect(() => {
     const getData = async (url: string) => {
       const urlLocal = url;
@@ -32,8 +31,6 @@ export function useFetch(url: string) {
     };
     getData(url);
   }, [url]);
-
-  //   useMemo
   console.log("Se hizo una petición");
   return { dataJson, load };
 }

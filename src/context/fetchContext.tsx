@@ -15,9 +15,7 @@ const FetchProvider = ({ children }: ContextProps) => {
     if (dataJson !== null) {
       setData(dataJson);
     }
-    console.log(dataJson);
-  }, [dataJson, load]);
-  console.log("Estoy dentro del provedor");
+  }, [load]);
   return <FetchContext.Provider value={data}>{children}</FetchContext.Provider>;
 };
 
