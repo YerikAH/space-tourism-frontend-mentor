@@ -1,9 +1,9 @@
 import styled from "styled-components";
 /* images */
 
-import bgDestinationDesktop from "../assets/destination/background-destination-desktop.jpg";
-import bgDestinationTablet from "../assets/destination/background-destination-tablet.jpg";
-import bgDestinationMobile from "../assets/destination/background-destination-mobile.jpg";
+import bgDestinationDesktop from "../assets/technology/background-technology-desktop.jpg";
+import bgDestinationTablet from "../assets/technology/background-technology-tablet.jpg";
+import bgDestinationMobile from "../assets/technology/background-technology-mobile.jpg";
 
 export const BgGround = styled.div`
   background: fixed url(${bgDestinationMobile}) center/cover no-repeat;

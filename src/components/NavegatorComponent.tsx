@@ -20,6 +20,8 @@ import logo from "../assets/shared/logo.svg";
 import ham from "../assets/shared/icon-hamburger.svg";
 
 export default function NavegatorComponent() {
+  
+  
   return (
     <HeaderStyle>
       <NavegatorStyle>

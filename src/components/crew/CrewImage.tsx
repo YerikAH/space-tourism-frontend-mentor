@@ -32,7 +32,7 @@ export default function CrewImage({
         <ImageCrew src={image_path} />
       </ImageRespon>
 
-      <SubtitleOne className="tablet">{job}</SubtitleOne>
+      <SubtitleOne className="tablet"> {job} </SubtitleOne>
       <HeadlinePrincipal className="tablet">{name}</HeadlinePrincipal>
 
       <TextBodyOne className="tablet">{description}</TextBodyOne>

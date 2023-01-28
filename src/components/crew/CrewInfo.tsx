@@ -8,11 +8,9 @@ import {
   ImageRespon,
   TextBodyOne,
 } from "../../styles/crew_styles";
-export default function CrewInfo(
-  { job, name, description, image_path }: Crew,
-  style: StyleProps
-) {
-  console.log(style);
+
+export default function CrewInfo({ job, name, description, image_path }: Crew) {
+  console.log("Hola mundo");
   return (
     <>
       <SubtitleOne className="mobile">{job}</SubtitleOne>

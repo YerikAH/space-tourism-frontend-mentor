@@ -22,7 +22,6 @@ export default function CrewComponent() {
   const [data, setData] = useState<Crew>(CREW_INITIAL_STATE);
   const [options, setOptions] = useState<Options[]>(CREW_OPTIONS);
   const [style, setStyle] = useState(false);
-
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const getValue: string = (e.target as HTMLButtonElement).value;
     selectOption(getValue);
