@@ -9,15 +9,15 @@ import {
   TextBodyOne,
 } from "../../styles/tech_styles";
 
-export default function TechInfo({ name, description, image_path }: Tech) {
+export default function TechInfo({ name, description, image_path_desktop, image_path_mobile }: Tech) {
   return (
     <>
       <SubtitleOne className="mobile">THE TERMINOLOGY…</SubtitleOne>
       <HeadlinePrincipal className="mobile">{name}</HeadlinePrincipal>
       <TextBodyOne className="mobile">{description}</TextBodyOne>
-
+      <p>{image_path_mobile}</p>
       <ImageRespon className="tablet">
-        <ImageTech src={image_path} />
+        <ImageTech src={image_path_mobile} />
       </ImageRespon>
     </>
   );

@@ -1,4 +1,3 @@
-import { Crew, Destination } from "./data";
 import { Options } from "./options";
 
 export interface NavProps {

@@ -24,5 +24,6 @@ export const CREW_INITIAL_STATE: Crew = {
 export const TECH_INITIAL_STATE: Tech = {
   name: "",
   description: "",
-  image_path: "",
+  image_path_mobile: "",
+  image_path_desktop: "",
 };

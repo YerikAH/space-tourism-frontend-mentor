@@ -29,7 +29,6 @@ export default function TechComponent() {
 
     const tech: Tech[] = dataContext.tech;
     let objMoon: Tech | undefined = tech.find((item) => item.name === value);
-
     if (objMoon === undefined) {
       objMoon = TECH_INITIAL_STATE;
     }
@@ -53,11 +52,11 @@ export default function TechComponent() {
       <MainStyle>
 	<SectionStyle>
 	  <DivGridOne>
-	    <TechImage image_path={data.image_path} description={data.description} name={data.name} />
+	    <TechImage image_path_mobile={data.image_path_mobile} description={data.description} name={data.name} image_path_desktop={data.image_path_desktop} />
 	    <TeachNav options={options} handleClick={handleClick}/>
 	  </DivGridOne>
 	  <DivGridTwo>
-	    <TechInfo  image_path={data.image_path} description={data.description} name={data.name}/>
+	    <TechInfo  image_path_mobile={data.image_path_mobile} description={data.description} name={data.name} image_path_desktop={data.image_path_desktop} />
 	  </DivGridTwo>
 	</SectionStyle>
       </MainStyle>

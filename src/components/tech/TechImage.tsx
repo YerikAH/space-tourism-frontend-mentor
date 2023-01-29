@@ -14,7 +14,8 @@ import {
 } from "../../styles/tech_styles";
 
 export default function TechImage({
-  image_path,
+  image_path_desktop,
+  image_path_mobile,
   name,
   description,
 }: Tech) {
@@ -28,7 +29,7 @@ export default function TechImage({
       </DivStart>
 
       <ImageRespon className="mobile">
-        <ImageTech src={image_path} />
+        <ImageTech src={image_path_mobile} />
       </ImageRespon>
 
       <SubtitleOne className="tablet"> THE TERMINOLOGY… </SubtitleOne>
