@@ -87,11 +87,13 @@ export const NavigationOptions = styled.button`
   border: 1px solid #ffffff25; 
   width: 2.5rem;
   height: 2.5rem;
-  color: var(--white);
-  font: normal normal 400 1rem/1.2rem var(--font-bellefair); 
+  color: ${props => props.className === "true" ? "var(--blue-dark)" : "var(--white)"};
+  background:  ${props => props.className === "true" ? "var(--white)" : "transparent"};
+  font: normal normal 400 1rem/1.2rem var(--font-bellefair);
   @media (min-width: 720px) {
-    width: 0.938rem;
-    height: 0.938rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -110,11 +112,11 @@ export const ImageRespon = styled.div`
     width: 28.523rem;
     max-height: 35.75rem;
     margin-top: 3.75rem;
-    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     margin-bottom: 0;
   }
   @media (min-width: 1000px) {
     margin-top: 0;
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     width: 35.5rem;
     height: 44.5rem;
     max-width: none;
@@ -136,13 +138,13 @@ export const TextBodyOne = styled.p`
   margin-top: 1rem;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
-    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     font-size: 1rem;
-    line-height: 175rem;
+    line-height: 1.75rem;
     max-width: 28.625rem;
     margin-top: 0.5rem;
   }
   @media (min-width: 1000px) {
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     font-size: 1.125rem;
     line-height: 2rem;
     text-align: left;
@@ -158,12 +160,13 @@ export const HeadlinePrincipal = styled.h2`
   margin-top: 0.5rem;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
-    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
 
     font-size: 2.5rem;
     line-height: 2.875rem;
   }
   @media (min-width: 1000px) {
+    
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     font-size: 3.5rem;
     line-height: 4rem;
     text-align: left;
@@ -177,11 +180,11 @@ export const SubtitleOne = styled.h3`
   mix-blend-mode: normal;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
-    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     font-size: 1rem;
     margin-top: 3.75rem;
   }
   @media (min-width: 1000px) {
+    display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     font-size: 2rem;
     line-height: 2.4rem;
     text-align: left;
