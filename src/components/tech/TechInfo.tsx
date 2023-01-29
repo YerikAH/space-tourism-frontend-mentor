@@ -9,7 +9,7 @@ import {
   TextBodyOne,
 } from "../../styles/tech_styles";
 
-export default function CrewInfo({ name, description, image_path }: Tech) {
+export default function TechInfo({ name, description, image_path }: Tech) {
   return (
     <>
       <SubtitleOne className="mobile">THE TERMINOLOGY…</SubtitleOne>
