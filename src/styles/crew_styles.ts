@@ -119,15 +119,16 @@ export const HeadlineSecond = styled.h2`
     line-height: 1.5rem;
   }
   @media (min-width: 1000px) {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
-    letter-spacing: 4.725px;
-    text-align: left;
-  }
+  font-size: 1.75rem; 
+  line-height: 2.125rem; 
+  letter-spacing: 4.725px; 
+  text-align: left; 
+  } 
 `;
-export const ImageRespon = styled.div`
-  width: 100%;
-  margin: 2rem 0;
+
+export const ImageRespon = styled.div` 
+  width: 100%; 
+  margin: 2rem 0; 
   max-height: 14.938rem;
   height: 100%;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};

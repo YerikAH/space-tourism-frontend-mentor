@@ -1,6 +1,5 @@
 import React from "react";
 import { Crew } from "../../interface/data";
-import { StyleProps } from "../../interface/props";
 import {
   HeadlinePrincipal,
   ImageCrew,
@@ -10,7 +9,6 @@ import {
 } from "../../styles/crew_styles";
 
 export default function CrewInfo({ job, name, description, image_path }: Crew) {
-  console.log("Hola mundo");
   return (
     <>
       <SubtitleOne className="mobile">{job}</SubtitleOne>
