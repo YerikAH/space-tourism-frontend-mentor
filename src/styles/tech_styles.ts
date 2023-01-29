@@ -20,3 +20,49 @@ export const BgGround = styled.div`
   }
   z-index: -1;
 `;
+export const MainStyle = styled.main`
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  padding: 0 2rem;
+  @media (min-width: 720px) {
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 1000px) {
+    margin-top: 3.875rem;
+  }
+`;
+export const SectionStyle = styled.section`
+  display: grid;
+  place-items: center;
+  @media (min-width: 1000px) {
+    grid-template-columns: 50% 50%;
+  }
+`;
+export const DivGridOne = styled.div`
+  width: 100%;
+  display: grid;
+  place-items: center;
+  @media (min-width: 1000px) {
+    height: 100%;
+    place-items: start;
+    place-content: start;
+    padding: 0 2.375rem;
+  }
+`;
+export const DivGridTwo = styled.div`
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  @media (min-width: 720px) {
+    margin-top: 3.313rem;
+    margin-bottom: 0rem;
+  }
+  @media (min-width: 1000px) {
+    margin-top: 0;
+  }
+`;
