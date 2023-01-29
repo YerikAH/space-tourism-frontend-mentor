@@ -27,7 +27,6 @@ export const MainStyle = styled.main`
   margin: 0 auto;
   position: relative;
   width: 100%;
-  padding: 0 2rem;
   @media (min-width: 720px) {
     margin-top: 2.5rem;
   }
@@ -59,6 +58,7 @@ export const DivGridTwo = styled.div`
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding: 0 2rem;
   overflow: hidden;
   @media (min-width: 720px) {
     margin-top: 3.313rem;
@@ -81,12 +81,14 @@ export const Navigation = styled.nav`
   }
 `;
 export const NavigationOptions = styled.button`
-  background: var(--white);
+  background: transparent;
   mix-blend-mode: normal;
-  opacity: ${(props) => (props.className === "true" ? "1" : "0.17")};
   border-radius: 255px;
-  width: 0.625rem;
-  height: 0.625rem;
+  border: 1px solid #ffffff25; 
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--white);
+  font: normal normal 400 1rem/1.2rem var(--font-bellefair); 
   @media (min-width: 720px) {
     width: 0.938rem;
     height: 0.938rem;
@@ -96,17 +98,19 @@ export const NavigationOptions = styled.button`
 
 export const ImageRespon = styled.div` 
   width: 100%; 
-  margin: 2rem 0; 
-  max-height: 14.938rem;
-  height: 100%;
+  height: 14.938rem;
+  padding: 2rem 0;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
-  border-bottom: 1px solid var(--black);
+  
+  @media (min-width: 450px){
+    height: 100%;
+    max-height: 18rem;
+  }
   @media (min-width: 720px) {
     width: 28.523rem;
     max-height: 35.75rem;
     margin-top: 3.75rem;
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
-    border: none;
     margin-bottom: 0;
   }
   @media (min-width: 1000px) {
@@ -121,7 +125,7 @@ export const ImageRespon = styled.div`
 export const ImageTech = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 `;
 
 export const TextBodyOne = styled.p`
@@ -134,7 +138,7 @@ export const TextBodyOne = styled.p`
   @media (min-width: 720px) {
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     font-size: 1rem;
-    line-height: 1.75rem;
+    line-height: 175rem;
     max-width: 28.625rem;
     margin-top: 0.5rem;
   }
@@ -166,16 +170,15 @@ export const HeadlinePrincipal = styled.h2`
   }
 `;
 export const SubtitleOne = styled.h3`
-  font: normal normal 400 1rem/1.2rem var(--font-bellefair);
+  font: normal normal 400 0.9rem/1.2rem var(--font-barlow-condensed);
   text-align: center;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--purple-light);
   mix-blend-mode: normal;
-  opacity: 0.5;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: 3.75rem;
   }
   @media (min-width: 1000px) {

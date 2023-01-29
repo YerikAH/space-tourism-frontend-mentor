@@ -67,17 +67,20 @@ export const DATA_INITIAL_STATE: RootObject = {
   ],
   tech: [
     {
-      image_path: "",
+      image_path_mobile: "",
+      image_path_desktop: "",
       name: "",
       description: "",
     },
     {
-      image_path: "",
+      image_path_mobile: "",
+      image_path_desktop: "",
       name: "",
       description: "",
     },
     {
-      image_path: "",
+      image_path_mobile: "",
+      image_path_desktop: "",
       name: "",
       description: "",
     },
