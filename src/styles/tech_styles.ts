@@ -109,10 +109,7 @@ export const ImageRespon = styled.div`
     max-height: 18rem;
   }
   @media (min-width: 720px) {
-    width: 28.523rem;
-    max-height: 35.75rem;
-    margin-top: 3.75rem;
-    margin-bottom: 0;
+    height: 19.375rem; 
   }
   @media (min-width: 1000px) {
     margin-top: 0;

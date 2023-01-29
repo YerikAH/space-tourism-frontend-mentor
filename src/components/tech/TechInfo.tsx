@@ -15,9 +15,8 @@ export default function TechInfo({ name, description, image_path_desktop, image_
       <SubtitleOne className="mobile">THE TERMINOLOGY…</SubtitleOne>
       <HeadlinePrincipal className="mobile">{name}</HeadlinePrincipal>
       <TextBodyOne className="mobile">{description}</TextBodyOne>
-      <p>{image_path_mobile}</p>
       <ImageRespon className="tablet">
-        <ImageTech src={image_path_mobile} />
+        <ImageTech src={image_path_desktop} />
       </ImageRespon>
     </>
   );
