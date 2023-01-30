@@ -13,7 +13,7 @@ import {
   SpanStyle,
   UlStyle,
 } from "../styles/navegator_style";
-
+import {Link} from "react-router-dom"
 /* images */
 
 import logo from "../assets/shared/logo.svg";
@@ -39,7 +39,7 @@ export default function NavegatorComponent() {
           <LiStyle>
             <AStyle>
               <BStyle>01</BStyle>
-              <SpanStyle>DESTINATION</SpanStyle>
+	      <Link to="/destination">DESTINATION</Link>
             </AStyle>
           </LiStyle>
           <LiStyle>
