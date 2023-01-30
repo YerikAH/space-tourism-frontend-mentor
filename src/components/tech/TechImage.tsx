@@ -1,5 +1,4 @@
 import React from "react";
-import useWidth from "../../hook/useWidth";
 import { Tech } from "../../interface/data";
 
 import {
@@ -20,7 +19,6 @@ export default function TechImage({
   name,
   description,
 }: Tech) {
-  const {windowWidth, renderImages} = useWidth(1000);
   return (
     <>
       <DivStart>
@@ -31,7 +29,7 @@ export default function TechImage({
       </DivStart>
 
       <ImageRespon className="mobile">
-	<ImageTech src={renderImages ? image_path_desktop : image_path_mobile} />
+	<ImageTech src={image_path_mobile} />
       </ImageRespon>
 
       <SubtitleOne className="tablet"> THE TERMINOLOGY… </SubtitleOne>

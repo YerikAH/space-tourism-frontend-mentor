@@ -74,7 +74,7 @@ export const Navigation = styled.nav`
   gap: 1rem;
   @media (min-width: 720px) {
     gap: 1.5rem;
-    margin-top: 2.5rem;
+    margin: 0;
   }
   @media (min-width: 1000px) {
     margin-top: 7.5rem;
@@ -109,7 +109,11 @@ export const ImageRespon = styled.div`
     max-height: 18rem;
   }
   @media (min-width: 720px) {
-    height: 19.375rem; 
+    height: 19.375rem;
+    height: 19.375rem;
+    padding: 0;
+    max-height: none;
+    margin: 3.75rem 0 3.75rem 0;
   }
   @media (min-width: 1000px) {
     margin-top: 0;
