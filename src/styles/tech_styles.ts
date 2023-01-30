@@ -56,13 +56,13 @@ export const DivGridTwo = styled.div`
   display: grid;
   place-items: center;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1.625rem;
   margin-bottom: 2rem;
   padding: 0 2rem;
   overflow: hidden;
   @media (min-width: 720px) {
-    margin-top: 3.313rem;
-    margin-bottom: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 4rem;
   }
   @media (min-width: 1000px) {
     margin-top: 0;
@@ -142,7 +142,6 @@ export const TextBodyOne = styled.p`
     font-size: 1rem;
     line-height: 1.75rem;
     max-width: 28.625rem;
-    margin-top: 0.5rem;
   }
   @media (min-width: 1000px) {
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
@@ -161,7 +160,7 @@ export const HeadlinePrincipal = styled.h2`
   margin-top: 0.5rem;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
-
+    margin-top: 1rem;
     font-size: 2.5rem;
     line-height: 2.875rem;
   }
@@ -182,7 +181,7 @@ export const SubtitleOne = styled.h3`
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
     font-size: 1rem;
-    margin-top: 3.75rem;
+    margin-top: 2.75rem;
   }
   @media (min-width: 1000px) {
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
