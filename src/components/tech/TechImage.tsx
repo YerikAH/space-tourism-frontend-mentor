@@ -11,6 +11,7 @@ import {
   ImageRespon,
   SubtitleOne,
   TextBodyOne,
+	DivContent,
 } from "../../styles/tech_styles";
 
 export default function TechImage({
@@ -21,21 +22,15 @@ export default function TechImage({
 }: Tech) {
   return (
     <>
-      <DivStart>
-        <DivTitle>
-          <BStyle>03</BStyle>
-          <HeadlineSecond>SPACE LAUNCH 101</HeadlineSecond>
-        </DivTitle>
-      </DivStart>
 
       <ImageRespon className="mobile">
 	<ImageTech src={image_path_mobile} />
       </ImageRespon>
-
-      <SubtitleOne className="tablet"> THE TERMINOLOGY… </SubtitleOne>
-      <HeadlinePrincipal className="tablet">{name}</HeadlinePrincipal>
-
-      <TextBodyOne className="tablet">{description}</TextBodyOne>
+      <DivContent>
+	<SubtitleOne className="tablet"> THE TERMINOLOGY… </SubtitleOne>
+	<HeadlinePrincipal className="tablet">{name}</HeadlinePrincipal>
+	<TextBodyOne className="tablet">{description}</TextBodyOne>
+      </DivContent>
     </>
   );
 }

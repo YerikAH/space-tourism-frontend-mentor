@@ -31,7 +31,7 @@ export const MainStyle = styled.main`
     margin-top: 2.5rem;
   }
   @media (min-width: 1000px) {
-    margin-top: 3.875rem;
+    margin-top: 4.75rem;
   }
 `;
 export const SectionStyle = styled.section`
@@ -77,8 +77,13 @@ export const Navigation = styled.nav`
     margin: 0;
   }
   @media (min-width: 1000px) {
-    margin-top: 7.5rem;
-  }
+    margin-top: 0;
+    flex-direction:column;
+    height: auto;
+    align-self: stretch;
+    gap:0;
+    justify-content:space-between;
+ }
 `;
 export const NavigationOptions = styled.button`
   background: transparent;
@@ -94,6 +99,11 @@ export const NavigationOptions = styled.button`
     width: 3.75rem;
     height: 3.75rem;
     font-size: 1.5rem;
+  }
+  @media (min-width: 1000px) {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
   }
 `;
 
@@ -116,10 +126,10 @@ export const ImageRespon = styled.div`
     margin: 3.75rem 0 3.75rem 0;
   }
   @media (min-width: 1000px) {
-    margin-top: 0;
+    margin-top: 1.55rem;
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
-    width: 35.5rem;
-    height: 44.5rem;
+    width: 32.188rem;
+    height: 32.938rem;
     max-width: none;
     max-height: none;
   }
@@ -167,6 +177,7 @@ export const HeadlinePrincipal = styled.h2`
   @media (min-width: 1000px) {
     
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
+    margin-top: 0.8rem;
     font-size: 3.5rem;
     line-height: 4rem;
     text-align: left;
@@ -177,18 +188,20 @@ export const SubtitleOne = styled.h3`
   text-align: center;
   text-transform: uppercase;
   color: var(--purple-light);
-  mix-blend-mode: normal;
+mix-blend-mode: normal;
+letter-spacing: 2.36px;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
     font-size: 1rem;
     margin-top: 2.75rem;
+    letter-spacing:2.7px;
   }
   @media (min-width: 1000px) {
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
-    font-size: 2rem;
-    line-height: 2.4rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
     text-align: left;
-    margin-top: 9.625rem;
+    margin-top: 0rem;
   }
 `;
 
@@ -251,3 +264,20 @@ export const HeadlineSecond = styled.h2`
   text-align: left; 
   } 
 `;
+
+export const DivContent = styled.div``;
+
+export const DivSeparate = styled.div`  
+  display:grid;
+  place-items:center;
+  width:100%;
+  @media(min-width:1000px){
+    display:flex;
+    flex-direction: row-reverse;
+    margin-top: 8.563rem;
+    place-items:start;
+    gap:5rem;
+    height:19.375rem;
+  }
+`;
+

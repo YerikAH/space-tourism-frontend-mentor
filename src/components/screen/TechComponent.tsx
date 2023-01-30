@@ -5,7 +5,7 @@ import FetchContext from "../../context/fetchContext";
 import {changeTrueValue} from "../../helpers/changeTrueValue";
 import {Tech} from "../../interface/data";
 import {Options} from "../../interface/options";
-import {BgGround, DivGridOne, DivGridTwo, MainStyle, SectionStyle} from "../../styles/tech_styles";
+import {BgGround, DivGridOne, DivGridTwo, DivStart, DivTitle, HeadlineSecond, MainStyle, SectionStyle, BStyle, DivSeparate} from "../../styles/tech_styles";
 import NavegatorComponent from "../NavegatorComponent";
 import TechInfo from "../tech/TechInfo";
 import TechImage from "../tech/TechImage";
@@ -52,8 +52,22 @@ export default function TechComponent() {
       <MainStyle>
 	<SectionStyle>
 	  <DivGridOne>
-	    <TechImage image_path_mobile={data.image_path_mobile} description={data.description} name={data.name} image_path_desktop={data.image_path_desktop} />
-	    <TeachNav options={options} handleClick={handleClick}/>
+	    
+	    <DivStart>
+	      <DivTitle>
+		<BStyle>03</BStyle>
+		<HeadlineSecond>SPACE LAUNCH 101</HeadlineSecond>
+	      </DivTitle>
+	    </DivStart>
+	    <DivSeparate>
+	      <TechImage 
+		image_path_mobile={data.image_path_mobile} 
+		description={data.description} 
+		name={data.name} 
+		image_path_desktop={data.image_path_desktop} 
+	      />
+	      <TeachNav options={options} handleClick={handleClick}/>
+	    </DivSeparate>
 	  </DivGridOne>
 	  <DivGridTwo>
 	    <TechInfo  image_path_mobile={data.image_path_mobile} description={data.description} name={data.name} image_path_desktop={data.image_path_desktop} />
