@@ -95,6 +95,11 @@ export const NavigationOptions = styled.button`
   background: ${(props) =>
     props.className === "true" ? "var(--white)" : "transparent"};
   font: normal normal 400 1rem/1.2rem var(--font-bellefair);
+  transition: 0.3s;
+  &:hover {
+    border: ${(props) =>
+      props.className === "false" && "1px solid var(--white)"};
+  }
   @media (min-width: 720px) {
     width: 3.75rem;
     height: 3.75rem;

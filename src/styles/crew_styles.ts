@@ -153,6 +153,10 @@ export const NavigationOptions = styled.button`
   border-radius: 255px;
   width: 0.625rem;
   height: 0.625rem;
+  transition: 0.3s;
+  &:hover {
+    opacity: ${(props) => props.className === "false" && "0.5"};
+  }
   @media (min-width: 720px) {
     width: 0.938rem;
     height: 0.938rem;
