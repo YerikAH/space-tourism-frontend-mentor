@@ -33,25 +33,25 @@ export default function NavegatorComponent() {
           <LiStyle>
             <AStyle>
               <BStyle>00</BStyle>
-              <SpanStyle>HOME</SpanStyle>
+	      <Link className="Link" to="/">HOME</Link>
             </AStyle>
           </LiStyle>
           <LiStyle>
             <AStyle>
               <BStyle>01</BStyle>
-	      <Link to="/destination">DESTINATION</Link>
+	      <Link className="Link" to="/destination">DESTINATION</Link>
             </AStyle>
           </LiStyle>
           <LiStyle>
             <AStyle>
               <BStyle>02</BStyle>
-              <SpanStyle>CREW</SpanStyle>
+	      <Link to="/crew" className="Link">CREW</Link>
             </AStyle>
           </LiStyle>
           <LiStyle>
             <AStyle>
               <BStyle>03</BStyle>
-              <SpanStyle>TECHNOLOGY</SpanStyle>
+	      <Link className="Link" to="/technology">TECHNOLOGY</Link>
             </AStyle>
           </LiStyle>
         </UlStyle>

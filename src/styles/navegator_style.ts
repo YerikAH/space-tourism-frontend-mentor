@@ -67,6 +67,16 @@ export const AStyle = styled.a`
       bottom: -2.438rem;
     }
   }
+  .Link {
+    letter-spacing: 2.3625px;
+    font: normal normal 400 0.875rem/1.063rem var(--font-barlow-condensed);
+    color: var(--white);
+    @media (min-width: 1000px) {
+      font-size: 1rem;
+      line-height: 1.188rem;
+      letter-spacing: 2.7px;
+    }
+  }
 `;
 export const BStyle = styled.b`
   display: none;
