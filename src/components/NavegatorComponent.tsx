@@ -26,6 +26,7 @@ import { Options } from "../interface/options";
 import { OPTIONS_INITIAL_STATE } from "../constant/optionsInitialState";
 /* helpers */
 import { changeTrueValue } from "../helpers/changeTrueValue";
+import NavMobileComponent from "./NavMobileComponent";
 
 export default function NavegatorComponent({ page }: NavegatorProps) {
   const [Page, setPage] = useState<Options[]>(OPTIONS_INITIAL_STATE);
@@ -37,42 +38,45 @@ export default function NavegatorComponent({ page }: NavegatorProps) {
     return value ? "true" : "false";
   }
   return (
-    <HeaderStyle>
-      <NavegatorStyle>
-        <UlStyle>
-          <LogoStyle src={logo} />
-        </UlStyle>
-        <Decoration></Decoration>
-        <UlStyle className="desktop-menu">
-          <LiStyle className={convertString(Page[0].value)}>
-            <Link to="/" className="Link">
-              <BStyle>00</BStyle>
-              <SpanStyle>HOME</SpanStyle>
-            </Link>
-          </LiStyle>
-          <LiStyle className={convertString(Page[1].value)}>
-            <Link to="/destination" className="Link">
-              <BStyle>01</BStyle>
-              <SpanStyle> DESTINATION</SpanStyle>
-            </Link>
-          </LiStyle>
-          <LiStyle className={convertString(Page[2].value)}>
-            <Link to="/crew" className="Link">
-              <BStyle>02</BStyle>
-              <SpanStyle>CREW</SpanStyle>
-            </Link>
-          </LiStyle>
-          <LiStyle className={convertString(Page[3].value)}>
-            <Link to="/technology" className="Link">
-              <BStyle>03</BStyle>
-              <SpanStyle>TECHNOLOGY</SpanStyle>
-            </Link>
-          </LiStyle>
-        </UlStyle>
-        <HamStyleButton>
-          <HamStyle src={ham} />
-        </HamStyleButton>
-      </NavegatorStyle>
-    </HeaderStyle>
+    <>
+      <HeaderStyle>
+        <NavegatorStyle>
+          <UlStyle>
+            <LogoStyle src={logo} />
+          </UlStyle>
+          <Decoration></Decoration>
+          <UlStyle className="desktop-menu">
+            <LiStyle className={convertString(Page[0].value)}>
+              <Link to="/" className="Link">
+                <BStyle>00</BStyle>
+                <SpanStyle>HOME</SpanStyle>
+              </Link>
+            </LiStyle>
+            <LiStyle className={convertString(Page[1].value)}>
+              <Link to="/destination" className="Link">
+                <BStyle>01</BStyle>
+                <SpanStyle> DESTINATION</SpanStyle>
+              </Link>
+            </LiStyle>
+            <LiStyle className={convertString(Page[2].value)}>
+              <Link to="/crew" className="Link">
+                <BStyle>02</BStyle>
+                <SpanStyle>CREW</SpanStyle>
+              </Link>
+            </LiStyle>
+            <LiStyle className={convertString(Page[3].value)}>
+              <Link to="/technology" className="Link">
+                <BStyle>03</BStyle>
+                <SpanStyle>TECHNOLOGY</SpanStyle>
+              </Link>
+            </LiStyle>
+          </UlStyle>
+          <HamStyleButton>
+            <HamStyle src={ham} />
+          </HamStyleButton>
+        </NavegatorStyle>
+      </HeaderStyle>
+      <NavMobileComponent />
+    </>
   );
 }
