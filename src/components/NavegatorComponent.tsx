@@ -31,28 +31,28 @@ export default function NavegatorComponent() {
         <Decoration></Decoration>
         <UlStyle className="desktop-menu">
           <LiStyle>
-            <AStyle>
+	    <Link to="/" className="Link">
               <BStyle>00</BStyle>
-	      <Link className="Link" to="/">HOME</Link>
-            </AStyle>
+              <SpanStyle>HOME</SpanStyle>
+            </Link>
           </LiStyle>
           <LiStyle>
-            <AStyle>
+	    <Link to="/destination" className="Link">
               <BStyle>01</BStyle>
-	      <Link className="Link" to="/destination">DESTINATION</Link>
-            </AStyle>
+	      <SpanStyle> DESTINATION</SpanStyle>
+            </Link>
           </LiStyle>
           <LiStyle>
-            <AStyle>
+	    <Link to="/crew" className="Link">
               <BStyle>02</BStyle>
-	      <Link to="/crew" className="Link">CREW</Link>
-            </AStyle>
+              <SpanStyle>CREW</SpanStyle>
+            </Link>
           </LiStyle>
           <LiStyle>
-            <AStyle>
+	    <Link to="/technology" className="Link">
               <BStyle>03</BStyle>
-	      <Link className="Link" to="/technology">TECHNOLOGY</Link>
-            </AStyle>
+              <SpanStyle>TECHNOLOGY</SpanStyle>
+            </Link>
           </LiStyle>
         </UlStyle>
         <HamStyleButton>
