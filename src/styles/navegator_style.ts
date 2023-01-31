@@ -56,6 +56,7 @@ export const LiStyle = styled.li`
       transform: ${(props) =>
         props.className === "true" ? "scale(1)" : "scaleX(0)"};
       background-color: var(--white);
+      opacity: ${(props) => props.className === "false" && "0.5"};
       bottom: -2.32rem;
       transition: 0.3s;
       position: absolute;

@@ -6,7 +6,6 @@ import NavegatorComponent from "../NavegatorComponent";
 /* styles */
 import {
   BgGround,
-  CircleStyleButton,
   DivGridOne,
   DivGridTwo,
   HeadlinePrincipal,
@@ -22,6 +21,7 @@ import FetchContext from "../../context/fetchContext";
 /* interface and init state */
 import { Home } from "../../interface/data";
 import { HOME_INITIAL_STATE } from "../../constant/initialState";
+import { Link } from "react-router-dom";
 
 export default function HomeComponent() {
   const dataContext = useContext(FetchContext);
@@ -52,7 +52,9 @@ export default function HomeComponent() {
             <TextBodyOne>{data.text}</TextBodyOne>
           </DivGridOne>
           <DivGridTwo>
-            <CircleStyleButton>{data.button}</CircleStyleButton>
+            <Link to="/destination" className="Link">
+              {data.button}
+            </Link>
           </DivGridTwo>
         </SectionStyle>
       </MainStyle>

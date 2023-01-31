@@ -60,6 +60,40 @@ export const DivGridTwo = styled.div`
     margin-left: 6rem;
     margin-bottom: 0rem;
   }
+  .Link {
+    width: 9.375rem;
+    height: 9.375rem;
+    background-color: var(--white);
+    border-radius: 255px;
+    color: var(--blue-dark);
+    letter-spacing: 1.25px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal 400 1.25rem/1.438rem var(--font-bellefair);
+    &:hover {
+      box-shadow: 0px 0px 0px 80px var(--white-transparent-pale);
+    }
+    @media (min-width: 720px) {
+      width: 15.125rem;
+      height: 15.125rem;
+      font-size: 2rem;
+      line-height: 2.313rem;
+      letter-spacing: 2px;
+      &:hover {
+        box-shadow: 0px 0px 0px 120px var(--white-transparent-pale);
+      }
+    }
+    @media (min-width: 1000px) {
+      width: 17.125rem;
+      height: 17.125rem;
+      &:hover {
+        box-shadow: 0px 0px 0px 150px var(--white-transparent-pale);
+      }
+    }
+  }
 `;
 
 export const HeadlinePrincipal = styled.h1`
@@ -93,37 +127,5 @@ export const TextBodyOne = styled.p`
     font-size: 0.938rem;
     line-height: 2rem;
     text-align: left;
-  }
-`;
-
-export const CircleStyleButton = styled.button`
-  width: 9.375rem;
-  height: 9.375rem;
-  background-color: var(--white);
-  border-radius: 255px;
-  text-align: center;
-  letter-spacing: 1.25px;
-  transition: 0.3s;
-  text-transform: uppercase;
-  font: normal normal 400 1.25rem/1.438rem var(--font-bellefair);
-  &:hover {
-    box-shadow: 0px 0px 0px 80px var(--white-transparent-pale);
-  }
-  @media (min-width: 720px) {
-    width: 15.125rem;
-    height: 15.125rem;
-    font-size: 2rem;
-    line-height: 2.313rem;
-    letter-spacing: 2px;
-    &:hover {
-      box-shadow: 0px 0px 0px 120px var(--white-transparent-pale);
-    }
-  }
-  @media (min-width: 1000px) {
-    width: 17.125rem;
-    height: 17.125rem;
-    &:hover {
-      box-shadow: 0px 0px 0px 150px var(--white-transparent-pale);
-    }
   }
 `;
