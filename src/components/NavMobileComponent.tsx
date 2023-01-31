@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import {
   BStyle,
+  ButtonImage,
+  IconClose,
   List,
   MenuDivOne,
   MenuDivTwo,
@@ -10,13 +12,36 @@ import {
   MenuMobile,
   SpanStyle,
 } from "../styles/navegator_mobile_style";
-
-export default function NavMobileComponent() {
+import iconClose from "../assets/shared/icon-close.svg";
+import { MenuMobileProps, StylesMenu } from "../interface/props";
+import { INIT_STYLE } from "../constant/optionsInitialState";
+export default function NavMobileComponent({
+  menuo,
+  handleClick,
+}: MenuMobileProps) {
   const elementHTML = document.getElementById("menu")!;
+  const [styleMenu, setStyleMenu] = useState<StylesMenu>(INIT_STYLE);
+
+  useEffect(() => {
+    let changeStyles: StylesMenu = {
+      left: "0",
+    };
+    if (menuo) {
+      setStyleMenu(changeStyles);
+    } else {
+      changeStyles.left = "100vw";
+      setStyleMenu(changeStyles);
+    }
+  }, [styleMenu]);
+
   return ReactDOM.createPortal(
-    <MenuMobile>
+    <MenuMobile style={styleMenu}>
       <MenuList>
-        <MenuDivOne></MenuDivOne>
+        <MenuDivOne>
+          <ButtonImage aria-label="close menu">
+            <IconClose src={iconClose} onClick={handleClick} />
+          </ButtonImage>
+        </MenuDivOne>
         <MenuDivTwo>
           <List>
             <Link to="/" className="Link">

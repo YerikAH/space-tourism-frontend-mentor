@@ -43,7 +43,7 @@ export const SectionStyle = styled.section`
 
 export const DivGridOne = styled.div`
   display: grid;
-  gap: 1rem;
+  gap: 0;
   @media (min-width: 720px) {
     gap: 1.5rem;
   }
@@ -99,6 +99,8 @@ export const DivGridTwo = styled.div`
 export const HeadlinePrincipal = styled.h1`
   ${headlinePrincipalGlobal}
   color: var(--white);
+  font-size: 5rem;
+  line-height: 100px;
   @media (min-width: 720px) {
     font-size: 9.375rem;
     line-height: 9.375rem;

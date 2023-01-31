@@ -7,8 +7,10 @@ export const MenuMobile = styled.nav`
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0;
+  left: 100vw;
   z-index: 500;
+  transition: 0.3s;
+
   @media (min-width: 720px) {
     display: none;
   }
@@ -21,7 +23,25 @@ export const MenuList = styled.ul`
   background: var(--white-transparent);
   backdrop-filter: blur(40.7742px);
 `;
-export const MenuDivOne = styled.div``;
+export const MenuDivOne = styled.div`
+  display: flex;
+  justify-content: end;
+  margin-bottom: 4rem;
+  padding: 2.063rem 1.5rem 0 0;
+`;
+export const ButtonImage = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+`;
+export const IconClose = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
 export const MenuDivTwo = styled.div`
   gap: 2rem;
   display: flex;

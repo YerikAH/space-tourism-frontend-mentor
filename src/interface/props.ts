@@ -12,3 +12,11 @@ export interface ContextProps {
 export interface NavegatorProps {
   page: NavegatorString;
 }
+export interface MenuMobileProps {
+  menuo: boolean;
+  handleClick(): void;
+}
+
+export interface StylesMenu {
+  left: string;
+}

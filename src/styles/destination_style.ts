@@ -164,6 +164,8 @@ export const HeadlinePrincipal = styled.h1`
   ${headlinePrincipalGlobal}
   color: var(--white);
   margin-top: 1.25rem;
+  font-size: 3.5rem;
+  line-height: 64.18px;
   @media (min-width: 720px) {
     font-size: 5rem;
     line-height: 5.75rem;

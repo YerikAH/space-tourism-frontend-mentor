@@ -1,5 +1,5 @@
 import { Options } from "../interface/options";
-import { NavegatorString } from "../interface/props";
+import { NavegatorString, StylesMenu } from "../interface/props";
 
 export const DESTINATION_OPTIONS: Options[] = [
   {
@@ -71,3 +71,6 @@ export const OPTIONS_INITIAL_STATE: Options[] = [
     value: false,
   },
 ];
+export const INIT_STYLE: StylesMenu = {
+  left: "-100vw",
+};
