@@ -53,7 +53,8 @@ export const LiStyle = styled.li`
       content: "";
       width: 100%;
       height: 3px;
-      transform: scaleX(0);
+      transform: ${(props) =>
+        props.className === "true" ? "scale(1)" : "scaleX(0)"};
       background-color: var(--white);
       bottom: -2.32rem;
       transition: 0.3s;
