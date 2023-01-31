@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-/* route */
+/*route */
 import { Link } from "react-router-dom";
-
 /* styles */
 import {
   BStyle,
