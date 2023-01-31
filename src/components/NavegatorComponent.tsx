@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+/* components */
+import NavMobileComponent from "./NavMobileComponent";
+
 /*route */
 import { Link } from "react-router-dom";
+
 /* styles */
 import {
   BStyle,
@@ -20,19 +24,18 @@ import logo from "../assets/shared/logo.svg";
 import ham from "../assets/shared/icon-hamburger.svg";
 
 /* interface and init state*/
-import { NavegatorProps, StylesMenu } from "../interface/props";
+import { NavegatorProps } from "../interface/props";
 import { Options } from "../interface/options";
-
 import { OPTIONS_INITIAL_STATE } from "../constant/optionsInitialState";
+
 /* helpers */
 import { changeTrueValue } from "../helpers/changeTrueValue";
-import NavMobileComponent from "./NavMobileComponent";
 
 export default function NavegatorComponent({ page }: NavegatorProps) {
   const [Page, setPage] = useState<Options[]>(OPTIONS_INITIAL_STATE);
   const [switchMenu, setSwitchMenu] = useState(false);
-  const handleClick = () => setSwitchMenu(!switchMenu);
 
+  const handleClick = () => setSwitchMenu(!switchMenu);
   useEffect(() => {
     const menuObj = changeTrueValue(Page, page);
     setPage(menuObj);

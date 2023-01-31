@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+/* route */
 import { Link } from "react-router-dom";
+
+/* styles */
 import {
   BStyle,
   ButtonImage,
@@ -12,9 +15,14 @@ import {
   MenuMobile,
   SpanStyle,
 } from "../styles/navegator_mobile_style";
+
+/* images */
 import iconClose from "../assets/shared/icon-close.svg";
+
+/* interface and init state */
 import { MenuMobileProps, StylesMenu } from "../interface/props";
 import { INIT_STYLE } from "../constant/optionsInitialState";
+
 export default function NavMobileComponent({
   menuo,
   handleClick,
