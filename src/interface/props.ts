@@ -1,6 +1,6 @@
 import { Options } from "./options";
 
-type NavegatorString = "home" | "crew" | "tech" | "destination";
+export type NavegatorString = "home" | "crew" | "technology" | "destination";
 
 export interface NavProps {
   options: Options[];

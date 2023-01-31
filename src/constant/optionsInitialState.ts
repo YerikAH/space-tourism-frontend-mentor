@@ -1,4 +1,5 @@
 import { Options } from "../interface/options";
+import { NavegatorString } from "../interface/props";
 
 export const DESTINATION_OPTIONS: Options[] = [
   {
@@ -49,6 +50,24 @@ export const TECH_OPTIONS: Options[] = [
   },
   {
     name: "space capsule",
+    value: false,
+  },
+];
+export const OPTIONS_INITIAL_STATE: Options[] = [
+  {
+    name: "home" as NavegatorString,
+    value: true,
+  },
+  {
+    name: "destination" as NavegatorString,
+    value: false,
+  },
+  {
+    name: "crew" as NavegatorString,
+    value: false,
+  },
+  {
+    name: "technology" as NavegatorString,
     value: false,
   },
 ];

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 /* components */
 import {
   BStyle,
@@ -14,12 +14,22 @@ import {
 } from "../styles/navegator_style";
 import { Link } from "react-router-dom";
 /* images */
-
 import logo from "../assets/shared/logo.svg";
 import ham from "../assets/shared/icon-hamburger.svg";
+
 import { NavegatorProps } from "../interface/props";
+import { Options } from "../interface/options";
+
+import { changeTrueValue } from "../helpers/changeTrueValue";
+import { OPTIONS_INITIAL_STATE } from "../constant/optionsInitialState";
 
 export default function NavegatorComponent({ page }: NavegatorProps) {
+  const [Page, setPage] = useState<Options[]>(OPTIONS_INITIAL_STATE);
+  useEffect(() => {
+    const menuObj = changeTrueValue(Page, page);
+    setPage(menuObj);
+  }, []);
+
   return (
     <HeaderStyle>
       <NavegatorStyle>
