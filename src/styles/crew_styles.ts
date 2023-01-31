@@ -1,31 +1,35 @@
 import styled from "styled-components";
 
 /* images */
-import bgDestinationDesktop from "../assets/crew/background-crew-desktop.jpg";
-import bgDestinationTablet from "../assets/crew/background-crew-tablet.jpg";
-import bgDestinationMobile from "../assets/crew/background-crew-mobile.jpg";
+import bgDesktop from "../assets/crew/background-crew-desktop.jpg";
+import bgTablet from "../assets/crew/background-crew-tablet.jpg";
+import bgMobile from "../assets/crew/background-crew-mobile.jpg";
+/* global css */
+import {
+  bgGlobal,
+  bStyleGlobal,
+  divGridOneGlobal,
+  divStartGlobal,
+  divTitleGlobal,
+  headlinePrincipalGlobal,
+  headlineSecondGlobal,
+  mainGlobal,
+  sectionGlobal,
+} from "./global";
 
 export const BgGround = styled.div`
-  background: fixed url(${bgDestinationMobile}) center/cover no-repeat;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
+  ${bgGlobal}
+  background: fixed url(${bgMobile}) center/cover no-repeat;
   @media (min-width: 720px) {
-    background-image: url(${bgDestinationTablet});
+    background-image: url(${bgTablet});
   }
   @media (min-width: 1000px) {
-    background-image: url(${bgDestinationDesktop});
+    background-image: url(${bgDesktop});
   }
-  z-index: -1;
 `;
 
 export const MainStyle = styled.main`
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
+  ${mainGlobal}
   padding: 0 2rem;
   @media (min-width: 720px) {
     margin-top: 2.5rem;
@@ -35,16 +39,10 @@ export const MainStyle = styled.main`
   }
 `;
 export const SectionStyle = styled.section`
-  display: grid;
-  place-items: center;
-  @media (min-width: 1000px) {
-    grid-template-columns: 50% 50%;
-  }
+  ${sectionGlobal}
 `;
 export const DivGridOne = styled.div`
-  width: 100%;
-  display: grid;
-  place-items: center;
+  ${divGridOneGlobal}
   @media (min-width: 1000px) {
     height: 100%;
     place-items: start;
@@ -68,62 +66,20 @@ export const DivGridTwo = styled.div`
   }
 `;
 export const DivStart = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0 2.375rem;
-  @media (min-width: 720px) {
-    justify-content: start;
-  }
+  ${divStartGlobal}
   @media (min-width: 1000px) {
     padding: 0;
   }
 `;
 export const DivTitle = styled.div`
-  display: flex;
-  gap: 1.125rem;
-  @media (min-width: 1000px) {
-    gap: 1.75rem;
-  }
+  ${divTitleGlobal}
 `;
 
 export const BStyle = styled.b`
-  text-align: center;
-  letter-spacing: 2.7px;
-  text-transform: uppercase;
-  font: normal normal 700 1rem/1.188rem var(--font-barlow-condensed);
-  opacity: 0.25;
-  color: var(--white);
-  @media (min-width: 720px) {
-    letter-spacing: 3.375px;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-  }
-  @media (min-width: 1000px) {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
-    letter-spacing: 4.725px;
-    text-align: left;
-  }
+  ${bStyleGlobal}
 `;
 export const HeadlineSecond = styled.h2`
-  text-align: center;
-  letter-spacing: 2.7px;
-  text-transform: uppercase;
-  font: normal normal 400 1rem/1.188rem var(--font-barlow-condensed);
-  color: var(--white);
-  @media (min-width: 720px) {
-    letter-spacing: 3.375px;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-  }
-  @media (min-width: 1000px) {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
-    letter-spacing: 4.725px;
-    text-align: left;
-  }
+  ${headlineSecondGlobal}
 `;
 
 export const ImageRespon = styled.div`
@@ -204,15 +160,12 @@ export const NavigationOptions = styled.button`
 `;
 
 export const HeadlinePrincipal = styled.h2`
-  font: normal normal 400 1.5rem/1.75rem var(--font-bellefair);
-  text-align: center;
-  text-transform: uppercase;
+  ${headlinePrincipalGlobal}
   color: var(--white);
   margin-top: 0.5rem;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
-
     font-size: 2.5rem;
     line-height: 2.875rem;
   }

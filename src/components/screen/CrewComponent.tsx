@@ -62,7 +62,7 @@ export default function CrewComponent() {
   return (
     <FetchContext.Provider value={dataContext}>
       <BgGround />
-      <NavegatorComponent />
+      <NavegatorComponent page="crew" />
       <MainStyle>
         <SectionStyle>
           <DivGridOne>

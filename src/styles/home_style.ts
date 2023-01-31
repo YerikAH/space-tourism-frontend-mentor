@@ -1,31 +1,32 @@
 import styled from "styled-components";
 
 /* images */
-import bgHomeDesktop from "../assets/home/background-home-desktop.jpg";
-import bgHomeTablet from "../assets/home/background-home-tablet.jpg";
-import bgHomeMobile from "../assets/home/background-home-mobile.jpg";
+import bgDesktop from "../assets/home/background-home-desktop.jpg";
+import bgTablet from "../assets/home/background-home-tablet.jpg";
+import bgMobile from "../assets/home/background-home-mobile.jpg";
+
+/* global css */
+import {
+  bgGlobal,
+  headlinePrincipalGlobal,
+  headlineSecondGlobal,
+  mainGlobal,
+  sectionGlobal,
+} from "./global";
 
 export const BgGround = styled.div`
-  background: fixed url(${bgHomeMobile}) center/cover no-repeat;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
+  ${bgGlobal}
+  background: fixed url(${bgMobile}) center/cover no-repeat;
   @media (min-width: 720px) {
-    background-image: url(${bgHomeTablet});
+    background-image: url(${bgTablet});
   }
   @media (min-width: 1000px) {
-    background-image: url(${bgHomeDesktop});
+    background-image: url(${bgDesktop});
   }
-  z-index: -1;
 `;
 
 export const MainStyle = styled.main`
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
+  ${mainGlobal}
   margin-top: 3rem;
   padding: 0 1.5rem;
   @media (min-width: 720px) {
@@ -37,11 +38,7 @@ export const MainStyle = styled.main`
   }
 `;
 export const SectionStyle = styled.section`
-  display: grid;
-  place-items: center;
-  @media (min-width: 1000px) {
-    grid-template-columns: 50% 50%;
-  }
+  ${sectionGlobal}
 `;
 
 export const DivGridOne = styled.div`
@@ -66,10 +63,8 @@ export const DivGridTwo = styled.div`
 `;
 
 export const HeadlinePrincipal = styled.h1`
-  text-align: center;
-  color: #ffffff;
-  font: normal normal 400 5rem/6.25rem var(--font-bellefair);
-  text-transform: uppercase;
+  ${headlinePrincipalGlobal}
+  color: var(--white);
   @media (min-width: 720px) {
     font-size: 9.375rem;
     line-height: 9.375rem;
@@ -80,22 +75,8 @@ export const HeadlinePrincipal = styled.h1`
   }
 `;
 export const HeadlineSecond = styled.h2`
-  text-align: center;
-  letter-spacing: 2.7px;
-  text-transform: uppercase;
-  font: normal normal 400 1rem/1.188rem var(--font-barlow-condensed);
+  ${headlineSecondGlobal}
   color: var(--purple-light);
-  @media (min-width: 720px) {
-    letter-spacing: 3.375px;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-  }
-  @media (min-width: 1000px) {
-    font-size: 1.75rem;
-    line-height: 2.125rem;
-    letter-spacing: 4.725px;
-    text-align: left;
-  }
 `;
 
 export const TextBodyOne = styled.p`

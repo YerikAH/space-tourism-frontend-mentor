@@ -68,7 +68,7 @@ export default function TechComponent() {
   return (
     <FetchContext.Provider value={dataContext}>
       <BgGround />
-      <NavegatorComponent />
+      <NavegatorComponent page="tech" />
       <MainStyle>
         <SectionStyle>
           <DivGridOne>

@@ -17,8 +17,9 @@ import { Link } from "react-router-dom";
 
 import logo from "../assets/shared/logo.svg";
 import ham from "../assets/shared/icon-hamburger.svg";
+import { NavegatorProps } from "../interface/props";
 
-export default function NavegatorComponent() {
+export default function NavegatorComponent({ page }: NavegatorProps) {
   return (
     <HeaderStyle>
       <NavegatorStyle>

@@ -61,7 +61,7 @@ export default function DestinationComponent() {
   return (
     <FetchContext.Provider value={dataContext}>
       <BgGround />
-      <NavegatorComponent />
+      <NavegatorComponent page="destination" />
       <MainStyle>
         <SectionStyle>
           <DivGridOne>

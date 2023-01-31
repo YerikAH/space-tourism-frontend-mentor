@@ -43,7 +43,7 @@ export default function HomeComponent() {
   return (
     <FetchContext.Provider value={dataContext}>
       <BgGround />
-      <NavegatorComponent />
+      <NavegatorComponent page="home" />
       <MainStyle>
         <SectionStyle>
           <DivGridOne>
