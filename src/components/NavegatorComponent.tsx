@@ -1,7 +1,6 @@
 import React from "react";
 /* components */
 import {
-  AStyle,
   BStyle,
   Decoration,
   HamStyle,
@@ -13,15 +12,13 @@ import {
   SpanStyle,
   UlStyle,
 } from "../styles/navegator_style";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 /* images */
 
 import logo from "../assets/shared/logo.svg";
 import ham from "../assets/shared/icon-hamburger.svg";
 
 export default function NavegatorComponent() {
-  
-  
   return (
     <HeaderStyle>
       <NavegatorStyle>
@@ -31,25 +28,25 @@ export default function NavegatorComponent() {
         <Decoration></Decoration>
         <UlStyle className="desktop-menu">
           <LiStyle>
-	    <Link to="/" className="Link">
+            <Link to="/" className="Link">
               <BStyle>00</BStyle>
               <SpanStyle>HOME</SpanStyle>
             </Link>
           </LiStyle>
           <LiStyle>
-	    <Link to="/destination" className="Link">
+            <Link to="/destination" className="Link">
               <BStyle>01</BStyle>
-	      <SpanStyle> DESTINATION</SpanStyle>
+              <SpanStyle> DESTINATION</SpanStyle>
             </Link>
           </LiStyle>
           <LiStyle>
-	    <Link to="/crew" className="Link">
+            <Link to="/crew" className="Link">
               <BStyle>02</BStyle>
               <SpanStyle>CREW</SpanStyle>
             </Link>
           </LiStyle>
           <LiStyle>
-	    <Link to="/technology" className="Link">
+            <Link to="/technology" className="Link">
               <BStyle>03</BStyle>
               <SpanStyle>TECHNOLOGY</SpanStyle>
             </Link>

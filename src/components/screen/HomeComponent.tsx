@@ -1,5 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 
+/* components */
+import NavegatorComponent from "../NavegatorComponent";
+
+/* styles */
 import {
   BgGround,
   CircleStyleButton,
@@ -11,11 +15,13 @@ import {
   SectionStyle,
   TextBodyOne,
 } from "../../styles/home_style";
-import NavegatorComponent from "../NavegatorComponent";
 
+/* context */
+import FetchContext from "../../context/fetchContext";
+
+/* interface and init state */
 import { Home } from "../../interface/data";
 import { HOME_INITIAL_STATE } from "../../constant/initialState";
-import FetchContext from "../../context/fetchContext";
 
 export default function HomeComponent() {
   const dataContext = useContext(FetchContext);

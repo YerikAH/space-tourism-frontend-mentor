@@ -31,6 +31,5 @@ export function useFetch(url: string) {
     };
     getData(url);
   }, [url]);
-  console.log("Se hizo una petición");
   return { dataJson, load };
 }

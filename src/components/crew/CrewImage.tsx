@@ -1,6 +1,6 @@
 import React from "react";
-import { Crew } from "../../interface/data";
 
+/* styles */
 import {
   BStyle,
   DivStart,
@@ -12,6 +12,9 @@ import {
   SubtitleOne,
   TextBodyOne,
 } from "../../styles/crew_styles";
+
+/* interface */
+import { Crew } from "../../interface/data";
 
 export default function CrewImage({
   image_path,

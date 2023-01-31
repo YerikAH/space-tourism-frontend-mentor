@@ -1,6 +1,6 @@
 import React from "react";
-import { Destination } from "../../interface/data";
 
+/* styles */
 import {
   Decoration,
   DivBoxOne,
@@ -10,6 +10,9 @@ import {
   TextBodyOne,
   TextBodyTwo,
 } from "../../styles/destination_style";
+
+/* interface */
+import { Destination } from "../../interface/data";
 
 export default function DestinationInfo({
   title,

@@ -1,6 +1,10 @@
 import React from "react";
-import { NavProps } from "../../interface/props";
+
+/* styles */
 import { Navigation, NavigationOptions } from "../../styles/tech_styles";
+
+/* interface */
+import { NavProps } from "../../interface/props";
 
 export default function TeachNav({ options, handleClick }: NavProps) {
   return (
@@ -11,9 +15,9 @@ export default function TeachNav({ options, handleClick }: NavProps) {
           className={item.value ? "true" : "false"}
           value={item.name}
           onClick={(e) => handleClick(e)}
-	>
-	  {i + 1}
-	</NavigationOptions>
+        >
+          {i + 1}
+        </NavigationOptions>
       ))}
     </Navigation>
   );

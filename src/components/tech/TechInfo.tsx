@@ -1,6 +1,6 @@
 import React from "react";
-import { Tech } from "../../interface/data";
-import { StyleProps } from "../../interface/props";
+
+/* styles */
 import {
   HeadlinePrincipal,
   ImageTech,
@@ -9,7 +9,15 @@ import {
   TextBodyOne,
 } from "../../styles/tech_styles";
 
-export default function TechInfo({ name, description, image_path_desktop, image_path_mobile }: Tech) {
+/* interface */
+import { Tech } from "../../interface/data";
+
+export default function TechInfo({
+  name,
+  description,
+  image_path_desktop,
+  image_path_mobile,
+}: Tech) {
   return (
     <>
       <SubtitleOne className="mobile">THE TERMINOLOGY…</SubtitleOne>

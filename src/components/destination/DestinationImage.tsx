@@ -1,5 +1,6 @@
 import React from "react";
-import { Destination, RootObject } from "../../interface/data";
+
+/* styles */
 import {
   BStyle,
   DivStart,
@@ -8,6 +9,9 @@ import {
   ImagePlanet,
   ImageRespon,
 } from "../../styles/destination_style";
+
+/* interface */
+import { Destination } from "../../interface/data";
 
 export default function DestinationImage({ image_path }: Destination) {
   return (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-/* images */
 
+/* images */
 import bgDestinationDesktop from "../assets/technology/background-technology-desktop.jpg";
 import bgDestinationTablet from "../assets/technology/background-technology-tablet.jpg";
 import bgDestinationMobile from "../assets/technology/background-technology-mobile.jpg";
@@ -20,7 +20,6 @@ export const BgGround = styled.div`
   }
   z-index: -1;
 `;
- 
 
 export const MainStyle = styled.main`
   max-width: 1440px;
@@ -78,22 +77,24 @@ export const Navigation = styled.nav`
   }
   @media (min-width: 1000px) {
     margin-top: 0;
-    flex-direction:column;
+    flex-direction: column;
     height: auto;
     align-self: stretch;
-    gap:0;
-    justify-content:space-between;
- }
+    gap: 0;
+    justify-content: space-between;
+  }
 `;
 export const NavigationOptions = styled.button`
   background: transparent;
   mix-blend-mode: normal;
   border-radius: 255px;
-  border: 1px solid #ffffff25; 
+  border: 1px solid #ffffff25;
   width: 2.5rem;
   height: 2.5rem;
-  color: ${props => props.className === "true" ? "var(--blue-dark)" : "var(--white)"};
-  background:  ${props => props.className === "true" ? "var(--white)" : "transparent"};
+  color: ${(props) =>
+    props.className === "true" ? "var(--blue-dark)" : "var(--white)"};
+  background: ${(props) =>
+    props.className === "true" ? "var(--white)" : "transparent"};
   font: normal normal 400 1rem/1.2rem var(--font-bellefair);
   @media (min-width: 720px) {
     width: 3.75rem;
@@ -107,14 +108,13 @@ export const NavigationOptions = styled.button`
   }
 `;
 
-
-export const ImageRespon = styled.div` 
-  width: 100%; 
+export const ImageRespon = styled.div`
+  width: 100%;
   height: 14.938rem;
   padding: 2rem 0;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
-  
-  @media (min-width: 450px){
+
+  @media (min-width: 450px) {
     height: 100%;
     max-height: 18rem;
   }
@@ -175,7 +175,6 @@ export const HeadlinePrincipal = styled.h2`
     line-height: 2.875rem;
   }
   @media (min-width: 1000px) {
-    
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
     margin-top: 0.8rem;
     font-size: 3.5rem;
@@ -188,13 +187,13 @@ export const SubtitleOne = styled.h3`
   text-align: center;
   text-transform: uppercase;
   color: var(--purple-light);
-mix-blend-mode: normal;
-letter-spacing: 2.36px;
+  mix-blend-mode: normal;
+  letter-spacing: 2.36px;
   display: ${(props) => (props.className === "mobile" ? "block" : "none")};
   @media (min-width: 720px) {
     font-size: 1rem;
     margin-top: 2.75rem;
-    letter-spacing:2.7px;
+    letter-spacing: 2.7px;
   }
   @media (min-width: 1000px) {
     display: ${(props) => (props.className === "mobile" ? "none" : "block")};
@@ -204,7 +203,6 @@ letter-spacing: 2.36px;
     margin-top: 0rem;
   }
 `;
-
 
 export const DivStart = styled.div`
   display: flex;
@@ -258,26 +256,25 @@ export const HeadlineSecond = styled.h2`
     line-height: 1.5rem;
   }
   @media (min-width: 1000px) {
-  font-size: 1.75rem; 
-  line-height: 2.125rem; 
-  letter-spacing: 4.725px; 
-  text-align: left; 
-  } 
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+    letter-spacing: 4.725px;
+    text-align: left;
+  }
 `;
 
 export const DivContent = styled.div``;
 
-export const DivSeparate = styled.div`  
-  display:grid;
-  place-items:center;
-  width:100%;
-  @media(min-width:1000px){
-    display:flex;
+export const DivSeparate = styled.div`
+  display: grid;
+  place-items: center;
+  width: 100%;
+  @media (min-width: 1000px) {
+    display: flex;
     flex-direction: row-reverse;
     margin-top: 8.563rem;
-    place-items:start;
-    gap:5rem;
-    height:19.375rem;
+    place-items: start;
+    gap: 5rem;
+    height: 19.375rem;
   }
 `;
-

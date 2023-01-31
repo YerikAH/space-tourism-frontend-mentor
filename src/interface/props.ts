@@ -7,6 +7,3 @@ export interface NavProps {
 export interface ContextProps {
   children: JSX.Element;
 }
-export interface StyleProps {
-  style: boolean;
-}

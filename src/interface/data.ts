@@ -21,10 +21,10 @@ export interface Crew {
 }
 
 export interface Tech {
-  image_path_mobile: string;
-  image_path_desktop: string;
-  name: string;
-  description: string;
+  image_path_mobile?: string;
+  image_path_desktop?: string;
+  name?: string;
+  description?: string;
 }
 
 export interface RootObject {

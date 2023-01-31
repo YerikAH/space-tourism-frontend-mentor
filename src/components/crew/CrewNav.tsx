@@ -1,6 +1,9 @@
 import React from "react";
-import { NavProps } from "../../interface/props";
+/* styles */
 import { Navigation, NavigationOptions } from "../../styles/crew_styles";
+
+/* Interface */
+import { NavProps } from "../../interface/props";
 
 export default function CrewNav({ options, handleClick }: NavProps) {
   return (

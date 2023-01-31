@@ -46,49 +46,26 @@ export const Decoration = styled.div`
   }
 `;
 export const LiStyle = styled.li`
-  .Link{
-  display: flex;
-  position: relative;
-  &::after {
-    content: "";
-    width: 100%;
-    height: 3px;
-    transform: scaleX(0);
-    background-color: var(--white);
-    bottom: -2.32rem;
-    transition: 0.3s;
-    position: absolute;
-  }
-  &:hover::after {
-    transform: scale(1);
-  }
-  @media (min-width: 1000px) {
+  .Link {
+    display: flex;
+    position: relative;
     &::after {
-      bottom: -2.438rem;
+      content: "";
+      width: 100%;
+      height: 3px;
+      transform: scaleX(0);
+      background-color: var(--white);
+      bottom: -2.32rem;
+      transition: 0.3s;
+      position: absolute;
     }
-  }
-  }
-
-`;
-export const AStyle = styled.a`
-  display: flex;
-  position: relative;
-  &::after {
-    content: "";
-    width: 100%;
-    height: 3px;
-    transform: scaleX(0);
-    background-color: var(--white);
-    bottom: -2.32rem;
-    transition: 0.3s;
-    position: absolute;
-  }
-  &:hover::after {
-    transform: scale(1);
-  }
-  @media (min-width: 1000px) {
-    &::after {
-      bottom: -2.438rem;
+    &:hover::after {
+      transform: scale(1);
+    }
+    @media (min-width: 1000px) {
+      &::after {
+        bottom: -2.438rem;
+      }
     }
   }
 `;

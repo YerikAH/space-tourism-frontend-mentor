@@ -15,15 +15,13 @@ import {
   SectionStyle,
 } from "../../styles/destination_style";
 
-/* const */
-import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
-import { DESTINATION_INITIAL_STATE } from "../../constant/initialState";
-
-/* interface */
+/* interface and init state*/
 import { Options } from "../../interface/options";
 import { Destination } from "../../interface/data";
 import { changeTrueValue } from "../../helpers/changeTrueValue";
 import FetchContext from "../../context/fetchContext";
+import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
+import { DESTINATION_INITIAL_STATE } from "../../constant/initialState";
 
 export default function DestinationComponent() {
   const dataContext = useContext(FetchContext);
@@ -39,7 +37,6 @@ export default function DestinationComponent() {
 
   function changeData(getValue?: string) {
     const value = getValue === undefined ? "moon" : getValue;
-
     const destination: Destination[] = dataContext.destination;
     let objMoon: Destination | undefined = destination.find(
       (item) => item.title === value

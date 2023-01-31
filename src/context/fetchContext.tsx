@@ -1,6 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import { DATA_INITIAL_STATE } from "../constant/dataInitialState";
+
+/* hook */
 import { useFetch } from "../hook/useFetch";
+
+/* interface and init state */
+import { DATA_INITIAL_STATE } from "../constant/dataInitialState";
 import { RootObject } from "../interface/data";
 import { ContextProps } from "../interface/props";
 
@@ -16,6 +20,7 @@ const FetchProvider = ({ children }: ContextProps) => {
       setData(dataJson);
     }
   }, [load]);
+
   return <FetchContext.Provider value={data}>{children}</FetchContext.Provider>;
 };
 

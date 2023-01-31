@@ -1,6 +1,6 @@
 import styled from "styled-components";
-/* images */
 
+/* images */
 import bgHomeDesktop from "../assets/home/background-home-desktop.jpg";
 import bgHomeTablet from "../assets/home/background-home-tablet.jpg";
 import bgHomeMobile from "../assets/home/background-home-mobile.jpg";
