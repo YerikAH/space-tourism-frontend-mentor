@@ -1,6 +1,6 @@
 # Frontend Mentor | Space tourism multi-page website
 
-This is a solution to the Sunny Space tourism multi-page website. The challenge is from [Front-end Mentor.](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
+This is a solution to the Space tourism multi-page website. The challenge is from [Front-end Mentor.](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
 
 ## Developing
 ### What I learned
