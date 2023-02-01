@@ -61,7 +61,7 @@ export default function CrewComponent() {
     changeData();
   }, [dataContext]);
   return (
-    <DivContain className="">
+    <DivContain>
       <FetchContext.Provider value={dataContext}>
         <BgGround />
         <NavegatorComponent page="crew" />
