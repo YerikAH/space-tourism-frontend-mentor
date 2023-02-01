@@ -30,6 +30,7 @@ import { OPTIONS_INITIAL_STATE } from "../constant/optionsInitialState";
 
 /* helpers */
 import { changeTrueValue } from "../helpers/changeTrueValue";
+import { convertString } from "../helpers/convertString";
 
 export default function NavegatorComponent({ page }: NavegatorProps) {
   const [Page, setPage] = useState<Options[]>(OPTIONS_INITIAL_STATE);
@@ -40,9 +41,7 @@ export default function NavegatorComponent({ page }: NavegatorProps) {
     const menuObj = changeTrueValue(Page, page);
     setPage(menuObj);
   }, []);
-  function convertString(value: boolean): string {
-    return value ? "true" : "false";
-  }
+
   return (
     <>
       <HeaderStyle>

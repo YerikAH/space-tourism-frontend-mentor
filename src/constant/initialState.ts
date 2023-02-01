@@ -27,4 +27,3 @@ export const TECH_INITIAL_STATE: Tech = {
   image_path_mobile: "",
   image_path_desktop: "",
 };
-export const LOCAL_STORAGE_NAME = "space_menu";
