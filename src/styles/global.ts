@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 
 export const bgGlobal = css`
   position: fixed;
@@ -84,4 +84,8 @@ export const headlinePrincipalGlobal = css`
   font: normal normal 400 1.5rem/1.75rem var(--font-bellefair);
   text-align: center;
   text-transform: uppercase;
+`;
+export const DivContain = styled.div`
+  display: grid;
+  width: 100%;
 `;

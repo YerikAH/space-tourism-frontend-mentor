@@ -26,6 +26,7 @@ import { Options } from "../../interface/options";
 
 /* helpers */
 import { changeTrueValue } from "../../helpers/changeTrueValue";
+import { DivContain } from "../../styles/global";
 
 export default function CrewComponent() {
   const dataContext = useContext(FetchContext);
@@ -60,30 +61,32 @@ export default function CrewComponent() {
     changeData();
   }, [dataContext]);
   return (
-    <FetchContext.Provider value={dataContext}>
-      <BgGround />
-      <NavegatorComponent page="crew" />
-      <MainStyle>
-        <SectionStyle>
-          <DivGridOne>
-            <CrewImage
-              name={data.name}
-              description={data.description}
-              image_path={data.image_path}
-              job={data.job}
-            />
-            <CrewNav handleClick={handleClick} options={options} />
-          </DivGridOne>
-          <DivGridTwo>
-            <CrewInfo
-              name={data.name}
-              description={data.description}
-              image_path={data.image_path}
-              job={data.job}
-            />
-          </DivGridTwo>
-        </SectionStyle>
-      </MainStyle>
-    </FetchContext.Provider>
+    <DivContain className="">
+      <FetchContext.Provider value={dataContext}>
+        <BgGround />
+        <NavegatorComponent page="crew" />
+        <MainStyle>
+          <SectionStyle>
+            <DivGridOne>
+              <CrewImage
+                name={data.name}
+                description={data.description}
+                image_path={data.image_path}
+                job={data.job}
+              />
+              <CrewNav handleClick={handleClick} options={options} />
+            </DivGridOne>
+            <DivGridTwo>
+              <CrewInfo
+                name={data.name}
+                description={data.description}
+                image_path={data.image_path}
+                job={data.job}
+              />
+            </DivGridTwo>
+          </SectionStyle>
+        </MainStyle>
+      </FetchContext.Provider>
+    </DivContain>
   );
 }

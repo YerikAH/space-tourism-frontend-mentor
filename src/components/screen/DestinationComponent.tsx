@@ -22,6 +22,7 @@ import { changeTrueValue } from "../../helpers/changeTrueValue";
 import FetchContext from "../../context/fetchContext";
 import { DESTINATION_OPTIONS } from "../../constant/optionsInitialState";
 import { DESTINATION_INITIAL_STATE } from "../../constant/initialState";
+import { DivContain } from "../../styles/global";
 
 export default function DestinationComponent() {
   const dataContext = useContext(FetchContext);
@@ -59,25 +60,27 @@ export default function DestinationComponent() {
   }, [dataContext]);
 
   return (
-    <FetchContext.Provider value={dataContext}>
-      <BgGround />
-      <NavegatorComponent page="destination" />
-      <MainStyle>
-        <SectionStyle>
-          <DivGridOne>
-            <DestinationImage image_path={data.image_path} />
-          </DivGridOne>
-          <DivGridTwo>
-            <DestinationNav handleClick={handleClick} options={options} />
-            <DestinationInfo
-              description={data.description}
-              distance={data.distance}
-              time={data.time}
-              title={data.title}
-            />
-          </DivGridTwo>
-        </SectionStyle>
-      </MainStyle>
-    </FetchContext.Provider>
+    <DivContain className="">
+      <FetchContext.Provider value={dataContext}>
+        <BgGround />
+        <NavegatorComponent page="destination" />
+        <MainStyle>
+          <SectionStyle>
+            <DivGridOne>
+              <DestinationImage image_path={data.image_path} />
+            </DivGridOne>
+            <DivGridTwo>
+              <DestinationNav handleClick={handleClick} options={options} />
+              <DestinationInfo
+                description={data.description}
+                distance={data.distance}
+                time={data.time}
+                title={data.title}
+              />
+            </DivGridTwo>
+          </SectionStyle>
+        </MainStyle>
+      </FetchContext.Provider>
+    </DivContain>
   );
 }

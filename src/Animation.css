@@ -1,0 +1,21 @@
+.slide-enter {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.slide-exit {
+  opacity: 1;
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  z-index: -100;
+  position: absolute;
+}

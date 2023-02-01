@@ -40,7 +40,7 @@ export default function NavMobileComponent({
       changeStyles.left = "100vw";
       setStyleMenu(changeStyles);
     }
-  }, [styleMenu]);
+  }, [menuo]);
 
   return ReactDOM.createPortal(
     <MenuMobile style={styleMenu}>

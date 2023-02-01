@@ -31,6 +31,7 @@ import {
 
 /* helpers */
 import { changeTrueValue } from "../../helpers/changeTrueValue";
+import { DivContain } from "../../styles/global";
 
 export default function TechComponent() {
   const dataContext = useContext(FetchContext);
@@ -66,38 +67,40 @@ export default function TechComponent() {
     changeData();
   }, [dataContext]);
   return (
-    <FetchContext.Provider value={dataContext}>
-      <BgGround />
-      <NavegatorComponent page="technology" />
-      <MainStyle>
-        <SectionStyle>
-          <DivGridOne>
-            <DivStart>
-              <DivTitle>
-                <BStyle>03</BStyle>
-                <HeadlineSecond>SPACE LAUNCH 101</HeadlineSecond>
-              </DivTitle>
-            </DivStart>
-            <DivSeparate>
-              <TechImage
+    <DivContain className="">
+      <FetchContext.Provider value={dataContext}>
+        <BgGround />
+        <NavegatorComponent page="technology" />
+        <MainStyle>
+          <SectionStyle>
+            <DivGridOne>
+              <DivStart>
+                <DivTitle>
+                  <BStyle>03</BStyle>
+                  <HeadlineSecond>SPACE LAUNCH 101</HeadlineSecond>
+                </DivTitle>
+              </DivStart>
+              <DivSeparate>
+                <TechImage
+                  image_path_mobile={data.image_path_mobile}
+                  description={data.description}
+                  name={data.name}
+                  image_path_desktop={data.image_path_desktop}
+                />
+                <TeachNav options={options} handleClick={handleClick} />
+              </DivSeparate>
+            </DivGridOne>
+            <DivGridTwo>
+              <TechInfo
                 image_path_mobile={data.image_path_mobile}
                 description={data.description}
                 name={data.name}
                 image_path_desktop={data.image_path_desktop}
               />
-              <TeachNav options={options} handleClick={handleClick} />
-            </DivSeparate>
-          </DivGridOne>
-          <DivGridTwo>
-            <TechInfo
-              image_path_mobile={data.image_path_mobile}
-              description={data.description}
-              name={data.name}
-              image_path_desktop={data.image_path_desktop}
-            />
-          </DivGridTwo>
-        </SectionStyle>
-      </MainStyle>
-    </FetchContext.Provider>
+            </DivGridTwo>
+          </SectionStyle>
+        </MainStyle>
+      </FetchContext.Provider>
+    </DivContain>
   );
 }

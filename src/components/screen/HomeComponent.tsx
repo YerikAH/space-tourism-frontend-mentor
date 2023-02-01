@@ -22,6 +22,7 @@ import FetchContext from "../../context/fetchContext";
 import { Home } from "../../interface/data";
 import { HOME_INITIAL_STATE } from "../../constant/initialState";
 import { Link } from "react-router-dom";
+import { DivContain } from "../../styles/global";
 
 export default function HomeComponent() {
   const dataContext = useContext(FetchContext);
@@ -41,23 +42,25 @@ export default function HomeComponent() {
   }, [dataContext]);
 
   return (
-    <FetchContext.Provider value={dataContext}>
-      <BgGround />
-      <NavegatorComponent page="home" />
-      <MainStyle>
-        <SectionStyle>
-          <DivGridOne>
-            <HeadlineSecond>{data.subtitle}</HeadlineSecond>
-            <HeadlinePrincipal>{data.title}</HeadlinePrincipal>
-            <TextBodyOne>{data.text}</TextBodyOne>
-          </DivGridOne>
-          <DivGridTwo>
-            <Link to="/destination" className="Link">
-              {data.button}
-            </Link>
-          </DivGridTwo>
-        </SectionStyle>
-      </MainStyle>
-    </FetchContext.Provider>
+    <DivContain className="">
+      <FetchContext.Provider value={dataContext}>
+        <BgGround />
+        <NavegatorComponent page="home" />
+        <MainStyle>
+          <SectionStyle>
+            <DivGridOne>
+              <HeadlineSecond>{data.subtitle}</HeadlineSecond>
+              <HeadlinePrincipal>{data.title}</HeadlinePrincipal>
+              <TextBodyOne>{data.text}</TextBodyOne>
+            </DivGridOne>
+            <DivGridTwo>
+              <Link to="/destination" className="Link">
+                {data.button}
+              </Link>
+            </DivGridTwo>
+          </SectionStyle>
+        </MainStyle>
+      </FetchContext.Provider>
+    </DivContain>
   );
 }

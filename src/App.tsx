@@ -8,19 +8,32 @@ import TechComponent from "./components/screen/TechComponent";
 import { FetchProvider } from "./context/fetchContext";
 
 /* route */
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
+/* styles */
+import "./Animation.css";
+
 function App() {
+  let location = useLocation();
+  console.log(location.pathname);
   return (
-    <>
-      <FetchProvider>
-        <Routes>
-          <Route path="/" element={<HomeComponent />} />
-          <Route path="/destination" element={<DestinationComponent />} />
-          <Route path="/crew" element={<CrewComponent />} />
-          <Route path="/technology" element={<TechComponent />} />
-        </Routes>
-      </FetchProvider>
-    </>
+    <FetchProvider>
+      <TransitionGroup>
+        <CSSTransition
+          key={location.pathname}
+          classNames="slide"
+          timeout={10000}
+        >
+          <Routes location={location}>
+            <Route path="/" element={<HomeComponent />} />
+            <Route path="/destination" element={<DestinationComponent />} />
+            <Route path="/crew" element={<CrewComponent />} />
+            <Route path="/technology" element={<TechComponent />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+    </FetchProvider>
   );
 }
 
