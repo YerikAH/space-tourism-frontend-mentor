@@ -21,6 +21,8 @@ Hey, data.json the property is same the optionsInitailState.ts
 1. [React](https://es.reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
 1. [styled-components](https://styled-components.com/)
 1. [Vite](https://vitejs.dev/)
+1. [React Router](https://reactrouter.com/en/main)
+1. [react-transition-group](https://reactcommunity.org/react-transition-group/)
 
 ## Demo
 
