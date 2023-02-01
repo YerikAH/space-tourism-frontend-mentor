@@ -16,7 +16,6 @@ export default function TechInfo({
   name,
   description,
   image_path_desktop,
-  image_path_mobile,
 }: Tech) {
   return (
     <>

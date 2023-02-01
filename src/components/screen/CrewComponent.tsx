@@ -5,6 +5,7 @@ import CrewImage from "../crew/CrewImage";
 import CrewInfo from "../crew/CrewInfo";
 import CrewNav from "../crew/CrewNav";
 import NavegatorComponent from "../NavegatorComponent";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 /* context */
 import FetchContext from "../../context/fetchContext";
@@ -17,6 +18,7 @@ import {
   MainStyle,
   SectionStyle,
 } from "../../styles/crew_styles";
+import "../../Animation.css";
 
 /* interface and init state */
 import { CREW_INITIAL_STATE } from "../../constant/initialState";
@@ -65,27 +67,33 @@ export default function CrewComponent() {
       <FetchContext.Provider value={dataContext}>
         <BgGround />
         <NavegatorComponent page="crew" />
-        <MainStyle>
-          <SectionStyle>
-            <DivGridOne>
-              <CrewImage
-                name={data.name}
-                description={data.description}
-                image_path={data.image_path}
-                job={data.job}
-              />
-              <CrewNav handleClick={handleClick} options={options} />
-            </DivGridOne>
-            <DivGridTwo>
-              <CrewInfo
-                name={data.name}
-                description={data.description}
-                image_path={data.image_path}
-                job={data.job}
-              />
-            </DivGridTwo>
-          </SectionStyle>
-        </MainStyle>
+        <TransitionGroup>
+          <CSSTransition key={data.name} classNames="slide" timeout={3000}>
+            <DivContain>
+              <MainStyle>
+                <SectionStyle>
+                  <DivGridOne>
+                    <CrewImage
+                      name={data.name}
+                      description={data.description}
+                      image_path={data.image_path}
+                      job={data.job}
+                    />
+                    <CrewNav handleClick={handleClick} options={options} />
+                  </DivGridOne>
+                  <DivGridTwo>
+                    <CrewInfo
+                      name={data.name}
+                      description={data.description}
+                      image_path={data.image_path}
+                      job={data.job}
+                    />
+                  </DivGridTwo>
+                </SectionStyle>
+              </MainStyle>
+            </DivContain>
+          </CSSTransition>
+        </TransitionGroup>
       </FetchContext.Provider>
     </DivContain>
   );

@@ -14,6 +14,8 @@ import NavegatorComponent from "../NavegatorComponent";
 import TechInfo from "../tech/TechInfo";
 import TechImage from "../tech/TechImage";
 import TeachNav from "../tech/TechNav";
+import { DivContain } from "../../styles/global";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 /* styles */
 import {
@@ -31,7 +33,6 @@ import {
 
 /* helpers */
 import { changeTrueValue } from "../../helpers/changeTrueValue";
-import { DivContain } from "../../styles/global";
 
 export default function TechComponent() {
   const dataContext = useContext(FetchContext);
@@ -71,35 +72,42 @@ export default function TechComponent() {
       <FetchContext.Provider value={dataContext}>
         <BgGround />
         <NavegatorComponent page="technology" />
-        <MainStyle>
-          <SectionStyle>
-            <DivGridOne>
-              <DivStart>
-                <DivTitle>
-                  <BStyle>03</BStyle>
-                  <HeadlineSecond>SPACE LAUNCH 101</HeadlineSecond>
-                </DivTitle>
-              </DivStart>
-              <DivSeparate>
-                <TechImage
-                  image_path_mobile={data.image_path_mobile}
-                  description={data.description}
-                  name={data.name}
-                  image_path_desktop={data.image_path_desktop}
-                />
-                <TeachNav options={options} handleClick={handleClick} />
-              </DivSeparate>
-            </DivGridOne>
-            <DivGridTwo>
-              <TechInfo
-                image_path_mobile={data.image_path_mobile}
-                description={data.description}
-                name={data.name}
-                image_path_desktop={data.image_path_desktop}
-              />
-            </DivGridTwo>
-          </SectionStyle>
-        </MainStyle>
+
+        <TransitionGroup>
+          <CSSTransition key={data.name} classNames="slide" timeout={3000}>
+            <DivContain>
+              <MainStyle>
+                <SectionStyle>
+                  <DivGridOne>
+                    <DivStart>
+                      <DivTitle>
+                        <BStyle>03</BStyle>
+                        <HeadlineSecond>SPACE LAUNCH 101</HeadlineSecond>
+                      </DivTitle>
+                    </DivStart>
+                    <DivSeparate>
+                      <TechImage
+                        image_path_mobile={data.image_path_mobile}
+                        description={data.description}
+                        name={data.name}
+                        image_path_desktop={data.image_path_desktop}
+                      />
+                      <TeachNav options={options} handleClick={handleClick} />
+                    </DivSeparate>
+                  </DivGridOne>
+                  <DivGridTwo>
+                    <TechInfo
+                      image_path_mobile={data.image_path_mobile}
+                      description={data.description}
+                      name={data.name}
+                      image_path_desktop={data.image_path_desktop}
+                    />
+                  </DivGridTwo>
+                </SectionStyle>
+              </MainStyle>
+            </DivContain>
+          </CSSTransition>
+        </TransitionGroup>
       </FetchContext.Provider>
     </DivContain>
   );
