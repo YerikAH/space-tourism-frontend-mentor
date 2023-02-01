@@ -30,6 +30,11 @@ Hey, data.json the property is same the optionsInitailState.ts
 
 ### Screenshots
 
+<img src="./screenshots/home-ss.png" />
+<img src="./screenshots/destination-ss.png" />
+<img src="./screenshots/crew-ss.png" />
+<img src="./screenshots/tech-ss.png" />
+
 ## Author
 
 - Harvey Yerik
