@@ -20,15 +20,15 @@ This is a solution to the Space tourism multi-page website. The challenge is fro
 
 1. [React](https://es.reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
 1. [styled-components](https://styled-components.com/)
-1. [Vite](https://vitejs.dev/)
 1. [React Router](https://reactrouter.com/en/main)
 1. [react-transition-group](https://reactcommunity.org/react-transition-group/)
+1. [Vite](https://vitejs.dev/)
 
 ## Demo
 
-🖥 If you want to see the solution, [click here]().
+🖥 If you want to see the solution, [click here](https://yerikah.github.io/space-tourism-frontend-mentor/).
 <br/>
-🌎 If you want to see the solution in Frontend Mentor, [click here]().
+🌎 If you want to see the solution in Frontend Mentor, [click here](https://www.frontendmentor.io/solutions/space-tourism-multipage-website-developed-with-react-and-typescript-JQdP1toVOi).
 
 ### Screenshots
 
