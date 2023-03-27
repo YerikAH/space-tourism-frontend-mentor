@@ -1,4 +1,4 @@
-# Frontend Mentor | Space tourism multi-page website
+# Front-End Mentor | Space tourism multi-page website
 
 This is a solution to the Space tourism multi-page website. The challenge is from [Front-end Mentor.](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
 
